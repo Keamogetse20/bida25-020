@@ -76,7 +76,7 @@ section {
 
 /* Product Card */
 .product {
-    background: linear-gradient ( 180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2) ;
+    background: linear-gradient ( 180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     border: 2px solid rgba(205, 184, 168, 0.6);
     padding: 14px;
     border-radius: 10px;
