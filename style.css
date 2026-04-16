@@ -67,6 +67,7 @@ section {
 /* Products Layout */
 .products {
     display: grid;
+    margin: 0 auto;
     gap: 22px;
     grid-template-columns: repeat(2, 1fr);
 }
