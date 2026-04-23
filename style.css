@@ -128,10 +128,12 @@ section {
 }
 .contact-box {
     background: #FFFFFF;
+    border: 2px solid rgba(205, 184, 168, 0.6);
     padding: 20px;
     border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
     width: 220px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 /* Buttons */
 button {
