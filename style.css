@@ -126,6 +126,7 @@ section {
     flex-wrap: wrap;
     gap: 20px;
     height: auto;
+    width: auto;
 }
 .contact-box {
     background: #FFFFFF;
@@ -133,7 +134,8 @@ section {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
-    width: 20px;
+    width: auto;
+    height: auto;
     overflow: hidden;
 }
 /* Buttons */
