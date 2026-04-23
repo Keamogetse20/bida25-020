@@ -56,7 +56,7 @@ main {
 
 /* Sections */
 section {
-    background-color: linear-gradient( 180deg, #FFFFFF, #FFF6F8 35%, #FFF7F2);
+    background-color: linear gradient( 180deg, #FFFFFF, #FFF6F8 with 35% transparency, #FFF7F2);
     padding: 20px;
     margin-bottom: 24px;
     border-radius: 14px;
