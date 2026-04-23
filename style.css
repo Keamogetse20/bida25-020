@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
-    background-color: #FAF3E3;
+    background-color: linear gradient(180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     color: #2B2B2B;
     line-height: 1.65;
 }
@@ -56,9 +56,9 @@ main {
 
 /* Sections */
 section {
-    background-color: linear gradient( 180deg, #FFFFFF, #FFF6F8 with 35% transparency, #FFF7F2);
+    background-color: #FAF3E3;
     padding: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 24px; 
     border-radius: 14px;
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 10px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
