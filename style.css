@@ -117,12 +117,10 @@ section {
     color: #5A5A5A;
 }
 /* Contact */
-.contact {
+.contact-container {
     backgroud-color: linear-gradient(180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     padding: 40px 20px;
     text-align: center;
-}
-.contact-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
