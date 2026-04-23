@@ -116,7 +116,15 @@ section {
 .product p {
     color: #5A5A5A;
 }
-
+/* Contact-section */
+contact-container {
+    backgroud-color: linear-gradient (180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
+    padding: 40px 20px
+    display: flex
+contact-box {
+    background: #FFFFFF;
+    padding: 20px
+    border-radius: 12px;
 /* Buttons */
 button {
     background-color: #E8AEB7;
