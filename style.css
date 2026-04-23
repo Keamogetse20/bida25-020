@@ -159,6 +159,43 @@ button {
 button:hover {
     background-color: #D996A2;
 }
+/* products page */
+
+
+.hamburger {
+  width: 25px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: black;
+  margin: 5px 0;
+}
+
+/* DROPDOWN */
+.dropdown {
+
+display: none;
+  position: absolute;
+  right: 30px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  flex-direction: column;
+}
+
+.dropdown a {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
 
 /* Footer */
 footer {
