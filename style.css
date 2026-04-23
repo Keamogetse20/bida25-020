@@ -56,7 +56,7 @@ main {
 
 /* Sections */
 section {
-    background-color: linear-gradient( 180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
+    background-color: linear-gradient( 180deg, #FFFFFF, #FFF6F8 35%, #FFF7F2);
     padding: 20px;
     margin-bottom: 24px;
     border-radius: 14px;
@@ -130,11 +130,20 @@ section {
 .contact-box {
     background: #FFFFFF;
     border: 2px solid rgba(205, 184, 168, 0.6);
-    padding: 15px;
+    padding: 12px 12px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     width: 180px;
     overflow: hidden;
+    text-align: left;
+}
+.contact-box h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.crontact-box p {
+    font-size: 14px;
+    margin: 2px 0;
 }
 /* Buttons */
 button {
