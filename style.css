@@ -122,13 +122,13 @@ contact {
     padding: 40px 20px;
     text-align: center;
 }
-contact-container {
+contact container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
-contact-box {
+contact box {
     background: #FFFFFF;
     padding: 20px;
     border-radius: 12px;
