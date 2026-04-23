@@ -124,6 +124,10 @@ contact-section {
 }
 contact-container {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 contact-box {
     background: #FFFFFF;
     padding: 20px;
