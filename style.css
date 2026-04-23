@@ -76,7 +76,7 @@ section {
 
 /* Product Card */
 .product {
-    background: #FFFFFF;
+    background: linear-gradient (180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     border: 2px solid rgba(205, 184, 168, 0.6);
     padding: 10px;
     height: auto;
@@ -118,7 +118,7 @@ section {
 }
 /* Contact */
 .contact-container {
-    backgroud-color: linear-gradient(180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
+    backgroud-color: linear-gradient (180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     padding: 30px 15px;
     text-align: center;
     display: flex;
