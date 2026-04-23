@@ -21,4 +21,31 @@
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact Us</a>
       <a href="returns.html">Returns</a>
+    <!-- Dropdown menu icon -->
+    <div class= "Hamburger"
+      onclick= "tooggleMnu()">
+    </div>
     </nav>
+    <!-- Dropdown Menu -->
+    <div class= "dropdown" id= "dropdownmenu">
+  <a onclick="filterCategory('Heels')">Heels</a>
+  <a onclick="filterCategory('Loafers')">Loafers</a>
+  <a onclick="filterCategory('Boots')">Boots</a>
+  <a onclick="filterCategory('Sneakers')">Sneakers</a>
+</div>
+    <!-- Main Section -->
+    <aside class="colors">
+    <h3>Colors</h3>
+    <button onclick= "filtercolor('black')">Black</button> 
+    <button onclick= "filtercolor('brown')">Brown</button>
+    <button onclick= "filtercolor('gray')">Gray</button> 
+    <button onclick= "filtercolor('white')">White</button> 
+    <button onclick= "filtercolor('red')">Red</button>   
+    <button onclick= "filtercolor('blue')">Blue</button> 
+    <button onclick= "filtercolor('pink')">Pink</button>
+    </aside>
+    <!-- Product Section -->
+    <Section class= "product">
+      <div class= "product" data-category= "heels data-color "black">
+        
+      
