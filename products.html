@@ -21,46 +21,65 @@
       <a href="about.html">About Us</a>
       <a href="contact.html">Contact Us</a>
       <a href="returns.html">Returns</a>
-    <!-- Dropdown menu icon -->
-    <div class= "Hamburger"
-      onclick= "tooggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- Dropdown menu -->   
+<div class="dropdown">
+    <button onclick="toggleMenu()"></button>
+    <div id="menu" class="dropdown-content">
+      <a onclick="selectCategory('Heels')">Heels</a>
+      <a onclick="selectCategory('Loafers')">Loafers</a>
+      <a onclick="selectCategory('Boots')">Boots</a>
+      <a onclick="selectCategory('Sneakers')">Sneakers</a>
     </div>
-    </nav>
-    <!-- Dropdown Menu -->
-    <div class= "dropdown" id= "dropdownMenu">
-  <a onclick="filterCategory('heels')">Heels</a>
-  <a onclick="filterCategory('loafers')">Loafers</a>
-  <a onclick="filterCategory('boots')">Boots</a>
-  <a onclick="filterCategory('sneakers')">Sneakers</a>
-</div>
-    <!-- Main Section -->
-    <aside class="colors">
+  </div>
+  </nav>
+    
+<!-- PRODUCT SLIDER -->
+<section class="slider">
+  <button class="prev" onclick="prevSlide()">❮</button>
+
+  <div class="slide">
+    <img src="https://via.placeholder.com/200">
+    <p>Red Heels</p>
+  </div>
+
+  <div class="slide">
+    <img src="https://via.placeholder.com/200">
+    <p>Black Boots</p>
+  </div>
+
+<div class="slide">
+    <img src="https://via.placeholder.com/200">
+    <p>White Sneakers</p>
+  </div>
+
+  <button class="next" onclick="nextSlide()">❯</button>
+</section>
+
+<!-- Main class -->
+<!-- PRODUCTS -->
+<main class="container">
+
+  <!-- COLOR FILTER -->
+  <aside class="filters">
     <h3>Colors</h3>
-    <button onclick= "filtercolor('black')">Black</button> 
-    <button onclick= "filtercolor('brown')">Brown</button>
-    <button onclick= "filtercolor('gray')">Gray</button> 
-    <button onclick= "filtercolor('white')">White</button> 
-    <button onclick= "filtercolor('red')">Red</button>   
-    <button onclick= "filtercolor('blue')">Blue</button> 
-    <button onclick= "filtercolor('pink')">Pink</button>
-    <button onclick="clearColor()">Clear Color</button>
-    </aside>
-    <!-- Product Section -->
-    <Section class= "products">
-      <div class= "product" data-category= "heels" data-color="black">
-        <h3>Noir twist stiletto pump</h3>
-        <img src= "image/heels-black/Noir twist stiletto pump.jpg" alt= "Noir twist stiletto pump">
-          <div class= "sizes">
-        <span>36</span><span>37</span><span>38</span><span>39</span>
-      </div>
-    </div>
-    </Section>
+    <button onclick="filterColor('all')">All</button>
+    <button onclick="filterColor('Red')">Red</button>
+    <button onclick="filterColor('Black')">Black</button>
+    <button onclick="filterColor('White')">White</button>
+  </aside>
+
+  <!-- PRODUCT CARDS -->
+  <section id="products" class="products"></section>
+</main>
+    
+    <!-- footer -->
+<footer>
+  <p>&copy; 2026 Veloura. All rights reserved.</p>
+</footer>
     
 <!-- JavaScript Link -->
 <script src="script.js"></script>
-
+  </Body>   
+</html>
     
       
