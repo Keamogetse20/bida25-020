@@ -1,29 +1,29 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <title> Products-Veloura</title>
-  <title> Products </title>
-  <!--Bootstrap css-->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<title>Products - Veloura</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-  <Body>
-    <!--Header section-->
-    <header>
-      <h1> Products </h1>
-      <p> Luxury women's footwear collection. </p>
-    </header>
-<!--Navigation-->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="returns.html">Returns</a>
-    <!-- Dropdown menu -->   
-<div class="dropdown">
-    <button onclick="toggleMenu()"></button>
+
+<body>
+
+<header>
+  <h1>PRODUCTS</h1>
+  <p>Luxury women's footwear collection.</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About Us</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="returns.html">Returns</a>
+
+  <div class="dropdown">
+    <button onclick="toggleMenu()">☰</button>
     <div id="menu" class="dropdown-content">
       <a onclick="selectCategory('Heels')">Heels</a>
       <a onclick="selectCategory('Loafers')">Loafers</a>
@@ -31,55 +31,34 @@
       <a onclick="selectCategory('Sneakers')">Sneakers</a>
     </div>
   </div>
-  </nav>
-    
-<!-- PRODUCT SLIDER -->
-<section class="slider">
-  <button class="prev" onclick="prevSlide()">❮</button>
+</nav>
 
-  <div class="slide">
-    <img src="https://via.placeholder.com/200">
-    <p>Red Heels</p>
-  </div>
+<!-- SLIDER -->
+<section class="product-slider">
+  <button class="slider-btn slider-prev" onclick="prevSlide()">❮</button>
 
-  <div class="slide">
-    <img src="https://via.placeholder.com/200">
-    <p>Black Boots</p>
-  </div>
+  <div id="slider-container"></div>
 
-<div class="slide">
-    <img src="https://via.placeholder.com/200">
-    <p>White Sneakers</p>
-  </div>
-
-  <button class="next" onclick="nextSlide()">❯</button>
+  <button class="slider-btn slider-next" onclick="nextSlide()">❯</button>
 </section>
 
-<!-- Main class -->
-<!-- PRODUCTS -->
 <main class="container">
 
-  <!-- COLOR FILTER -->
-  <aside class="filters">
+  <aside class="color-filter">
+     <div id="colorButtons"></div>
     <h3>Colors</h3>
-    <button onclick="filterColor('all')">All</button>
-    <button onclick="filterColor('Red')">Red</button>
-    <button onclick="filterColor('Black')">Black</button>
-    <button onclick="filterColor('White')">White</button>
   </aside>
-
-  <!-- PRODUCT CARDS -->
   <section id="products" class="products"></section>
+
 </main>
-    
-    <!-- footer -->
+
 <footer>
   <p>&copy; 2026 Veloura. All rights reserved.</p>
 </footer>
-    
-<!-- JavaScript Link -->
+
+<!--  Toast message -->
+<div id="toast">Added to cart</div>
+
 <script src="script.js"></script>
-  </Body>   
-</html>
-    
-      
+</body>
+</html>     
