@@ -322,6 +322,30 @@ button:hover {
 .slider-prev { left: 15px; }
 .slider-next { right: 15px; }
 
+/* Toast Message */
+#toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2B2B2B;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 9999;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+/* Selected size */
+.sizes span.active {
+    background-color: #E8AEB7;
+    color: #fff;
+}
+
 /* Footer */
 footer {
     background-color: #B998A6;
