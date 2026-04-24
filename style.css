@@ -159,43 +159,168 @@ button {
 button:hover {
     background-color: #D996A2;
 }
-/* products page */
 
+/* PRODUCT PAGE  */
 
-.hamburger {
-  width: 25px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: black;
-  margin: 5px 0;
-}
-
-/* DROPDOWN */
+/*  Dropdown Menu (hamburger)  */
 .dropdown {
-
-display: none;
-  position: absolute;
-  right: 30px;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 12px;
 }
 
-.dropdown a {
-  padding: 10px 20px;
-  cursor: pointer;
+.dropdown button {
+    background: none;
+    font-size: 26px;
+    padding: 6px 12px;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 999;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 18px;
+    font-weight: 600;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(232, 174, 183, 0.25);
+}
+
+
+/* Product Page Layout  */
+.product-page {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/*  Color Filter Sidebar  */
+.color-filter {
+    width: 190px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+
+.color-filter h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.color-filter button {
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+
+/* Product Grid Override */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+
+/* Shoe Sizes */
+.sizes {
+    display: none;
+    margin: 10px 0;
+}
+
+.sizes span {
+    border: 1px solid rgba(0,0,0,0.4);
+    padding: 6px 8px;
+    margin: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.sizes span:hover {
+    background-color: rgba(232, 174, 183, 0.4);
+}
+
+/* Show sizes when active */
+.product.show-sizes .sizes {
+    display: block;
+}
+
+
+/* Buy Button (product cards only)  */
+.product .buy-btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+
+/* Product Showcase Slider  */
+.product-slider {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 30px auto 40px;
+    max-width: 900px;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.10);
+    text-align: center;
+    overflow: hidden;
+}
+
+.product-slide {
+    display: none;
+    animation: slideIn 0.6s ease;
+}
+
+.product-slide img {
+    width: 220px;
+    border-radius: 10px;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slider buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(232, 174, 183, 0.9);
+    color: #2B2B2B;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    font-size: 18px;
+}
+
+.slider-btn:hover {
+    background-color: #D996A2;
+}
+
+.slider-prev { left: 15px; }
+.slider-next { right: 15px; }
 
 /* Footer */
 footer {
