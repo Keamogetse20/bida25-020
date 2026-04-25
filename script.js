@@ -45,11 +45,13 @@ function selectCategory(category) {
   currentCategory = category;
   currentColor = "all";
 
-  renderColors();
-  renderProducts();
+  document.getElementById("slider-container").style.display = "none";
 
   document.getElementById("products").style.display = "grid";
   document.getElementById("color-filter").style.display = "block";
+
+  renderColors();
+  renderProducts();
 }
 
 /* COLORS */
@@ -150,7 +152,7 @@ function renderSlider() {
 
   const track = document.getElementById("slider-track");
 
-  const sliderItems = shoes.slice(0, 14);
+  const sliderItems = featuredshoes;
 
   sliderItems.forEach(item => {
     const slide = document.createElement("div");
@@ -182,6 +184,7 @@ function moveSlide(direction) {
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 setInterval(() => moveSlide(1), 3000);
+
 /* TOAST */
 function showToast(msg) {
   const toast = document.getElementById("toast");
