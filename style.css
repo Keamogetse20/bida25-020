@@ -163,7 +163,7 @@ button:hover {
 /* PRODUCT PAGE ONLY */
 .nav {
    display: flex;
-    justify-content: center;   /* 🔥 center everything */
+    justify-content: center;
     align-items: center;
     gap: 30px;
     position: relative;
@@ -193,36 +193,73 @@ button:hover {
     position: absolute;
     right: 20px;
     top: 12px;
-}
-#slider-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    
+/* MAIN SLIDER */
+.main-slider {
+    position: relative;
+    margin: 30px auto;
+    width: 90%;
     overflow: hidden;
-    padding: 20px;
 }
 
+.slider-wrapper {
+    overflow: hidden;
+}
+
+/* sliding track */
 .slider-track {
     display: flex;
-    transition: 0.3s;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
 }
-
+    
 .slide {
-    min-width: 200px;
-    margin-right: 10px;
+    min-width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
     text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .slide img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
-#prev, #next {
-    padding: 10px;
+/* buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 14px;
     cursor: pointer;
+    z-index: 10;
 }
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+   .main-slider {
+    margin-top: 40px;
+}
+
+.header {
+    text-align: center;
+}
+
+body {
+    background: #f8f5f2;
+} 
 /* Layout */
 .product-page-body .page-layout {
     display: flex;
