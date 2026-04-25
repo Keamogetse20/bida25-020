@@ -17,10 +17,19 @@ function addShoes(color, category, count, sizes) {
 }
 
 /* DATA */
-addShoes("Heels", "Black", 5, [36,37,38]);
-addShoes("Heels", "Red", 5, [36,37]);
-addShoes("Sneakers", "Black", 5, [39,40,41]);
-addShoes("Boots", "Brown", 5, [40,41,42]);
+addShoes("Heels", "Black", 10, [36,37,38,39,40]);
+addShoes("Heels", "Red", 12, [36,37.39]);
+addShoes("Heels", "White", 10, [37.38,39,40]);
+addShoes("Loafers", "Black", 9, [40,41,42]);
+addShoes("Loafers", "Red", 10, [40,41,42]);
+addShoes("Loafers", "White", 10, [36,39,40,42]);
+addShoes("Boots", "Brown", 11, [40,41,42]);
+addShoes("Boots", "Black", 11, [36,40,41,42,43]);
+addShoes("Boots", "Gray", 11, [37,38,40,41,]);
+addShoes("Sneakers", "Black", 11, [37,38,42,43,]);
+addShoes("Sneakers", "Blue", 9, [37,39,42,43,]);
+addShoes("Sneakers", "Pink", 10, [36,37,38,39,42,43,]);
+addShoes("Sneakers", "White", 11, [36,37,38,40,41,42,43,]);
 
 let currentCategory = "";
 let currentColor = "all";
