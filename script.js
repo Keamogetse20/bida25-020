@@ -10,7 +10,7 @@ function addShoes(category, color, count, sizes) {
       category,
       color,
       price: "$" + (80 + Math.floor(Math.random() * 80)),
-      img: `images/${category.toLowerCase()}-${color.toLowerCase()}-${i}.jpg`,
+      img: `images/${color.toLowerCase()}-${category.toLowerCase()}-${i}.jpg`,
       sizes
     });
   }
