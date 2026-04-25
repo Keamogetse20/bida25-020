@@ -3,8 +3,8 @@ console.log("JS connected");
 const shoes = [
   {
     name: "Midnight Blossom Crystal Heels",
-    category: "heels",
-    color: "black",
+    category: "Heels",
+    color: "Black",
     price: "P120O",
     img: "image/heels/black/Midnight Blossom Crystal Heels",
     sizes: [36,37,38]
