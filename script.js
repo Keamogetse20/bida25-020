@@ -2,11 +2,11 @@ console.log("JS connected");
 
 const shoes = [
   {
-    name: "Elegant Night Heels",
+    name: "Midnight Blossom Crystal Heesls",
     category: "Heels",
     color: "Black",
     price: "$120",
-    img: "images/heels-black-1.jpg",
+    img: "image/heels/black",
     sizes: [36,37,38]
   },
   {
