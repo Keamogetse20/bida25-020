@@ -133,46 +133,53 @@ function renderProducts() {
 }
 
 /* SLIDER */
-let slideIndex = 0;
-const sliderItems = shoes.slice(0, 14); // 🔥 now 14 items
+let currentSlide = 0;
 
 function renderSlider() {
   const container = document.getElementById("slider-container");
 
   container.innerHTML = `
-    <button id="prev">❮</button>
-    <div class="slider-track"></div>
-    <button id="next">❯</button>
+    <button class="slider-btn prev">❮</button>
+
+    <div class="slider-wrapper">
+      <div class="slider-track" id="slider-track"></div>
+    </div>
+
+    <button class="slider-btn next">❯</button>
   `;
 
-  const track = container.querySelector(".slider-track");
+  const track = document.getElementById("slider-track");
+
+  const sliderItems = shoes.slice(0, 14);
 
   sliderItems.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "slide";
+    const slide = document.createElement("div");
+    slide.className = "slide";
 
-    div.innerHTML = `
-      <img src="${item.img}">
+    slide.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
       <p>${item.name}</p>
     `;
 
-    track.appendChild(div);
+    track.appendChild(slide);
   });
 
-  document.getElementById("next").onclick = () => moveSlide(1);
-  document.getElementById("prev").onclick = () => moveSlide(-1);
+  document.querySelector(".next").onclick = () => moveSlide(1);
+  document.querySelector(".prev").onclick = () => moveSlide(-1);
 }
 
 function moveSlide(direction) {
-  slideIndex += direction;
-
-  const track = document.querySelector(".slider-track");
+  const track = document.getElementById("slider-track");
   const slides = document.querySelectorAll(".slide");
 
-  if (slideIndex < 0) slideIndex = 0;
-  if (slideIndex > slides.length - 4) slideIndex = slides.length - 4;
+  currentSlide += direction;
 
-  track.style.transform = `translateX(-${slideIndex * 220}px)`;
+  if (currentSlide < 0) currentSlide = 0;
+  if (currentSlide > slides.length - 1) currentSlide = slides.length - 1;
+
+  const slideWidth = slides[0].offsetWidth + 20;
+
+  track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 /* TOAST */
 function showToast(msg) {
