@@ -2,34 +2,41 @@ console.log("JS connected");
 
 const shoes = [];
 
-/* ADD SHOES */
-function addShoes(color, category, count, sizes) {
-  for (let i = 1; i <= count; i++) {
-    shoes.push({
-      name: `${color} ${category} ${i}`,
-      category,
-      color,
-      price: "$" + (80 + Math.floor(Math.random() * 80)),
-      img: `images/${color.toLowerCase()}-${category.toLowerCase()}-${i}.jpg`,
-      sizes
-    });
+const shoes = [
+  {
+    name: "Elegant Night Heels",
+    category: "Heels",
+    color: "Black",
+    price: "$120",
+    img: "images/heels-black-1.jpg",
+    sizes: [36,37,38]
+  },
+  {
+    name: "Red Passion Heels",
+    category: "Heels",
+    color: "Red",
+    price: "$110",
+    img: "images/heels-red-1.jpg",
+    sizes: [36,37]
   }
-}
+];
 
-/* DATA */
-addShoes("Heels", "Black", 10, [36,37,38,39,40]);
-addShoes("Heels", "Red", 12, [36,37.39]);
-addShoes("Heels", "White", 10, [37.38,39,40]);
-addShoes("Loafers", "Black", 9, [40,41,42]);
-addShoes("Loafers", "Red", 10, [40,41,42]);
-addShoes("Loafers", "White", 10, [36,39,40,42]);
-addShoes("Boots", "Brown", 11, [40,41,42]);
-addShoes("Boots", "Black", 11, [36,40,41,42,43]);
-addShoes("Boots", "Gray", 11, [37,38,40,41,]);
-addShoes("Sneakers", "Black", 11, [37,38,42,43,]);
-addShoes("Sneakers", "Blue", 9, [37,39,42,43,]);
-addShoes("Sneakers", "Pink", 10, [36,37,38,39,42,43,]);
-addShoes("Sneakers", "White", 11, [36,37,38,40,41,42,43,]);
+const featuredShoes = [
+  { name: "Luxury Black Heels", img: "images/featured-1.jpg" },
+  { name: "Golden Elegance", img: "images/featured-2.jpg" },
+  { name: "Street White Sneakers", img: "images/featured-3.jpg" },
+  { name: "Brown Classic Boots", img: "images/featured-4.jpg" },
+  { name: "Minimal Nude Heels", img: "images/featured-5.jpg" },
+  { name: "Sporty Black Sneakers", img: "images/featured-6.jpg" },
+  { name: "Elegant Red Heels", img: "images/featured-7.jpg" },
+  { name: "Winter Boots", img: "images/featured-8.jpg" },
+  { name: "Classic White Heels", img: "images/featured-9.jpg" },
+  { name: "Luxury Gold Heels", img: "images/featured-10.jpg" },
+  { name: "Urban Sneakers", img: "images/featured-11.jpg" },
+  { name: "Soft Beige Heels", img: "images/featured-12.jpg" },
+  { name: "Dark Leather Boots", img: "images/featured-13.jpg" },
+  { name: "Chic Party Heels", img: "images/featured-14.jpg" }
+];
 
 let currentCategory = "";
 let currentColor = "all";
