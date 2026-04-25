@@ -181,6 +181,7 @@ function moveSlide(direction) {
 
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
+setInterval(() => moveSlide(1), 3000);
 /* TOAST */
 function showToast(msg) {
   const toast = document.getElementById("toast");
