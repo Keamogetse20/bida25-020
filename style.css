@@ -195,45 +195,45 @@ button:hover {
     top: 12px;
     
 /* MAIN SLIDER */
-.main-slider {
+/* MAIN SLIDER CONTAINER */
+#slider-container {
     position: relative;
-    margin: 30px auto;
-    width: 90%;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
     overflow: hidden;
 }
 
+/* WRAPPER */
 .slider-wrapper {
     overflow: hidden;
 }
 
-/* sliding track */
+/* TRACK */
 .slider-track {
     display: flex;
-    gap: 20px;
-    transition: transform 0.4s ease-in-out;
+    gap: 15px;
+    transition: transform 0.5s ease;
 }
-    
+
+/* SLIDE CARD (SMALLER + CLEAN) */
 .slide {
-    min-width: 250px;
+    min-width: 180px;   /* 🔥 smaller cards */
     background: white;
     border-radius: 12px;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .slide img {
     width: 100%;
-    height: 180px;
+    height: 130px;      /* 🔥 reduced height */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
 }
-    
-#products,
-#color-filter {
-    display: none;
-}
-/* buttons */
+
+/* BUTTONS */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -241,29 +241,20 @@ button:hover {
     background: black;
     color: white;
     border: none;
-    padding: 10px 14px;
+    padding: 10px;
     cursor: pointer;
     z-index: 10;
 }
 
+/* LEFT BUTTON */
 .prev {
     left: 0;
 }
 
+/* RIGHT BUTTON */
 .next {
     right: 0;
 }
-   .main-slider {
-    margin-top: 40px;
-}
-
-.header {
-    text-align: center;
-}
-
-body {
-    background: #f8f5f2;
-} 
 /* Layout */
 .product-page-body .page-layout {
     display: flex;
