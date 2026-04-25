@@ -141,6 +141,7 @@ function renderProducts() {
 
 /* SLIDER */
 let currentSlide = 0;
+let autoSlide;
 
 function renderSlider() {
   const container = document.getElementById("slider-container");
@@ -156,6 +157,8 @@ function renderSlider() {
   `;
 
   const track = document.getElementById("slider-track");
+  
+if (!featuredShoes || featuredShoes.length === 0) return;
 
   featuredShoes.forEach(item => {
     const slide = document.createElement("div");
@@ -173,7 +176,8 @@ function renderSlider() {
   document.querySelector(".prev").onclick = () => moveSlide(-1);
 
   // AUTO SLIDE
-  setInterval(() => {
+  clearInterval(autoslide);
+  autoslide=setInterval(() => {
     moveSlide(1);
   }, 3000);
 }
@@ -182,7 +186,7 @@ function moveSlide(direction) {
   const track = document.getElementById("slider-track");
   const slides = document.querySelectorAll(".slide");
 
-  const slideWidth = slides[0].offsetWidth + 15;
+  const slideWidth = 195;
 
   currentSlide += direction;
 
