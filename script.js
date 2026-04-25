@@ -88,6 +88,7 @@ function filterColor(color) {
 }
 
 /* RENDER PRODUCTS */
+/* RENDER PRODUCTS */
 function renderProducts() {
   const container = document.getElementById("products");
   container.innerHTML = "";
@@ -112,33 +113,39 @@ function renderProducts() {
         <button class="buy-btn">Buy Now</button>
       `;
 
+      // SIZE SELECTION
       const sizes = card.querySelectorAll(".sizes span");
 
       sizes.forEach(size => {
         size.addEventListener("click", (e) => {
           e.stopPropagation();
+
           sizes.forEach(s => s.classList.remove("active"));
           size.classList.add("active");
         });
       });
 
+      // BUY BUTTON
       const btn = card.querySelector(".buy-btn");
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const selected = card.querySelector(".active");
 
-        if (!selected) {
-          showToast("Select size");
-          return;
-        }
+      if (btn) {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
 
-        showToast("Added to cart");
-      });
+          const selected = card.querySelector(".sizes span.active");
+
+          if (!selected) {
+            showToast("Select size");
+            return;
+          }
+
+          showToast(`Added size ${selected.textContent} to cart`);
+        });
+      }
 
       container.appendChild(card);
     });
 }
-
 /* SLIDER */
 let currentSlide = 0;
 let autoSlide;
@@ -196,9 +203,9 @@ function moveSlide(direction) {
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 /* TOAST */
-function showToast(msg) {
+function showToast(message) {
   const toast = document.getElementById("toast");
-  toast.textContent = msg;
+  toast.textContent = message;
   toast.classList.add("show");
 
   setTimeout(() => {
