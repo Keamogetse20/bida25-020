@@ -2,7 +2,7 @@ console.log("JS connected");
 
 const shoes = [
   {
-    name: "Midnight Blossom Crystal Heesls",
+    name: "Midnight Blossom Crystal Heels",
     category: "heels",
     color: "black",
     price: "P120O",
