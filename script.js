@@ -159,14 +159,12 @@ function renderSlider() {
 
   const track = document.getElementById("slider-track");
 
-  const sliderItems = featuredshoes;
-
-  sliderItems.forEach(item => {
+  featuredShoes.forEach(item => {
     const slide = document.createElement("div");
     slide.className = "slide";
 
     slide.innerHTML = `
-      <img src="${item.img}" alt="${item.name}">
+      <img src="${item.img}">
       <p>${item.name}</p>
     `;
 
@@ -175,23 +173,26 @@ function renderSlider() {
 
   document.querySelector(".next").onclick = () => moveSlide(1);
   document.querySelector(".prev").onclick = () => moveSlide(-1);
+
+  // AUTO SLIDE
+  setInterval(() => {
+    moveSlide(1);
+  }, 3000);
 }
 
 function moveSlide(direction) {
   const track = document.getElementById("slider-track");
   const slides = document.querySelectorAll(".slide");
 
+  const slideWidth = slides[0].offsetWidth + 15;
+
   currentSlide += direction;
 
   if (currentSlide < 0) currentSlide = 0;
-  if (currentSlide > slides.length - 1) currentSlide = slides.length - 1;
-
-  const slideWidth = slides[0].offsetWidth + 20;
+  if (currentSlide > slides.length - 1) currentSlide = 0; // loop
 
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
-setInterval(() => moveSlide(1), 3000);
-
 /* TOAST */
 function showToast(msg) {
   const toast = document.getElementById("toast");
