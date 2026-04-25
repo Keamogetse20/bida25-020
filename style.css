@@ -300,6 +300,10 @@ button:hover {
     color: white;
     cursor: pointer;
 }
+   .page-layout {
+    display: flex;
+    gap: 25px;
+} 
 
 /* Sidebar */
 .product-page-body .sidebar {
