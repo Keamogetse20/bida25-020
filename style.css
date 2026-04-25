@@ -161,7 +161,21 @@ button:hover {
 }
 
 /* PRODUCT PAGE ONLY */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
 
+.dropdown {
+    display: none;
+    background: white;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
 /* Dropdown */
 .product-page-body .dropdown {
     position: absolute;
@@ -170,7 +184,7 @@ button:hover {
 }
 
 /* Layout */
-.product-page-body .product-layout {
+.product-page-body .page-layout {
     display: flex;
     gap: 25px;
     align-items: flex-start;
@@ -223,7 +237,7 @@ button:hover {
 }
 
 /* Sidebar buttons */
-.product-page-body .color-filter button {
+.product-page-body . sidebar button {
     width: 100%;
     margin-bottom: 8px;
 }
@@ -236,7 +250,7 @@ button:hover {
     gap: 20px;
 }
 
-#color-filter {
+#sidebar {
     display: none;
 }
 
