@@ -1,7 +1,5 @@
 console.log("JS connected");
 
-const shoes = [];
-
 const shoes = [
   {
     name: "Elegant Night Heels",
