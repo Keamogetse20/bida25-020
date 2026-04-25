@@ -3,7 +3,7 @@ console.log("JS connected");
 const shoes = [];
 
 /* ADD SHOES */
-function addShoes(category, color, count, sizes) {
+function addShoes(color, category, count, sizes) {
   for (let i = 1; i <= count; i++) {
     shoes.push({
       name: `${color} ${category} ${i}`,
@@ -125,26 +125,46 @@ function renderProducts() {
 
 /* SLIDER */
 let slideIndex = 0;
-const sliderItems = shoes.slice(0, 6);
+const sliderItems = shoes.slice(0, 14); // 🔥 now 14 items
 
 function renderSlider() {
   const container = document.getElementById("slider-container");
-  container.innerHTML = "";
 
-  sliderItems.forEach((item, i) => {
+  container.innerHTML = `
+    <button id="prev">❮</button>
+    <div class="slider-track"></div>
+    <button id="next">❯</button>
+  `;
+
+  const track = container.querySelector(".slider-track");
+
+  sliderItems.forEach(item => {
     const div = document.createElement("div");
-    div.className = "product-slide";
-    div.style.display = i === 0 ? "block" : "none";
+    div.className = "slide";
 
     div.innerHTML = `
       <img src="${item.img}">
       <p>${item.name}</p>
     `;
 
-    container.appendChild(div);
+    track.appendChild(div);
   });
+
+  document.getElementById("next").onclick = () => moveSlide(1);
+  document.getElementById("prev").onclick = () => moveSlide(-1);
 }
 
+function moveSlide(direction) {
+  slideIndex += direction;
+
+  const track = document.querySelector(".slider-track");
+  const slides = document.querySelectorAll(".slide");
+
+  if (slideIndex < 0) slideIndex = 0;
+  if (slideIndex > slides.length - 4) slideIndex = slides.length - 4;
+
+  track.style.transform = `translateX(-${slideIndex * 220}px)`;
+}
 /* TOAST */
 function showToast(msg) {
   const toast = document.getElementById("toast");
