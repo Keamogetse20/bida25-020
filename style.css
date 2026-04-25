@@ -162,9 +162,21 @@ button:hover {
 
 /* PRODUCT PAGE ONLY */
 .nav {
+   display: flex;
+    justify-content: center;   /* 🔥 center everything */
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.nav-links {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
+    gap: 25px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 20px;
 }
 
 .dropdown {
@@ -279,7 +291,9 @@ button:hover {
 }
 
 #sidebar {
-    display: none;
+      display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Footer */
