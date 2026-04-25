@@ -6,7 +6,7 @@ const shoes = [
     category: "heels",
     color: "black",
     price: "P120O",
-    img: "image/heels/black",
+    img: "image/heels/black/Midnight Blossom Crystal Heels",
     sizes: [36,37,38]
   },
   {
