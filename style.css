@@ -207,6 +207,7 @@ button:hover {
 /* WRAPPER */
 .slider-wrapper {
     overflow: hidden;
+    width: 100%:
 }
 
 /* TRACK */
@@ -214,11 +215,13 @@ button:hover {
     display: flex;
     gap: 15px;
     transition: transform 0.5s ease;
+    width: max-content;
 }
 
 /* SLIDE CARD (SMALLER + CLEAN) */
 .slide {
-    min-width: 180px;   /* 🔥 smaller cards */
+    min-width: 180px;
+    flex-shrink: 0;
     background: white;
     border-radius: 12px;
     padding: 8px;
