@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // =========================
-    // SLIDESHOW
-    // =========================
+   /* SLIDESHOW */
+    document.addEventListener("DOMContentLoaded", () => {
+
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
     const nextBtn = document.getElementById("nextBtn");
