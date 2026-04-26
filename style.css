@@ -188,6 +188,7 @@ button:hover {
 
 /* DROPDOWN MENU */
 .dropdown-menu {
+    z-index: 1000;
     position: absolute;
     right: 0;
     top: 35px;
@@ -224,6 +225,7 @@ button:hover {
 /* SLIDESHOW CONTAINER */
 .slideshow-container {
     position: relative;
+    z-index:1;
     width: 80%;
     margin: 40px auto;
     background: #eee;
