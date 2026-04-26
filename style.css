@@ -266,17 +266,18 @@ button:hover {
 .prev, .next {
     position: absolute;
     top: 50%;
-    height: 100%;
-    width: 50%;
     transform: translateY(-50%);
+    
+    width: 40px;      /* FIXED SIZE */
+    height: 40px;
+
     background: transparent;
     border: none;
-    color: white;
+
     cursor: pointer;
-    font-size: 20px;
     z-index: 5;
-    capacity: 0;
-    pointer-events: auto;
+
+    opacity: 0; /* invisible */
 }
 
 /* LEFT BUTTON */
