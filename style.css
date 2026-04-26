@@ -221,7 +221,58 @@ button:hover {
     background-color: #d9a5a5;
     color: white;
 }
+/* SLIDESHOW CONTAINER */
+.slideshow-container {
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+    background: #eee;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
 
+/* SLIDES */
+.slide {
+    display: none;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* ACTIVE SLIDE */
+.slide.active {
+    display: block;
+}
+
+/* BUTTONS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d9a5a5;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+/* LEFT BUTTON */
+.prev {
+    left: 10px;
+}
+
+/* RIGHT BUTTON */
+.next {
+    right: 10px;
+}
+
+/* HOVER */
+.prev:hover, .next:hover {
+    background: #b97d7d;
+}
 /* Footer */
 footer {
     background-color: #B998A6;
