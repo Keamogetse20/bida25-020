@@ -160,193 +160,48 @@ button:hover {
     background-color: #D996A2;
 }
 
-/* PRODUCT PAGE ONLY */
-.nav {
-   display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+
+/* MENU CONTAINER */
+.menu-container {
     position: relative;
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.dropdown {
-    display: none;
-    background: white;
-    position: absolute;
-    right: 20px;
-    top: 40px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-/* Dropdown */
-.product-page-body .dropdown {
-    position: absolute;
-    right: 20px;
-    top: 12px;
-    
-/* MAIN SLIDER */
-/* MAIN SLIDER CONTAINER */
-#slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-/* WRAPPER */
-.slider-wrapper {
-    overflow: hidden;
-    width: 100%:
-}
-
-/* TRACK */
-.slider-track {
-    display: flex;
-    gap: 15px;
-    transition: transform 0.5s ease;
-    width: max-content;
-}
-
-/* SLIDE CARD (SMALLER + CLEAN) */
-.slide {
-    min-width: 180px;
-    flex-shrink: 0;
-    background: white;
-    border-radius: 12px;
-    padding: 8px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.slide img {
-    width: 100%;
-    height: 130px;      /* 🔥 reduced height */
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* BUTTONS */
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: black;
-    color: white;
-    border: none;
-    padding: 10px;
+/* HAMBURGER ICON */
+.menu-toggle {
+    font-size: 24px;
     cursor: pointer;
-    z-index: 10;
 }
 
-/* LEFT BUTTON */
-.prev {
-    left: 0;
-}
-
-/* RIGHT BUTTON */
-.next {
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
     right: 0;
-}
-/* Layout */
-.product-page-body .page-layout {
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-}
-.product-page-body .product {
-    background: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    text-align: center;
+    top: 40px;
+    background-color: #f3e8e8;
+    width: 150px;
+    border-radius: 8px;
+    display: none; /* hidden by default */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.product-page-body .product img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+/* LIST */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.product-page-body .sizes span {
-    display: inline-block;
-    padding: 5px 8px;
-    margin: 3px;
-    border: 1px solid #ccc;
+/* ITEMS */
+.dropdown-menu li {
+    padding: 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.product-page-body .sizes span.active {
-    background: black;
+/* HOVER EFFECT */
+.dropdown-menu li:hover {
+    background-color: #d9a5a5;
     color: white;
-}
-
-.product-page-body .buy-btn {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: none;
-    background: black;
-    color: white;
-    cursor: pointer;
-}
-   .page-layout {
-    display: flex;
-    gap: 25px;
-} 
-
-/* Sidebar */
-.product-page-body .sidebar {
-    width: 190px;
-    background: #FFFFFF;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-}
-
-/* Sidebar buttons */
-.product-page-body .sidebar button {
-    width: 100%;
-    margin-bottom: 8px;
-}
-
-/*  GRID  */
-.product-page-body .products-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-#sidebar {
-      display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-    #toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: black;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 14px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, bottom 0.3s ease;
-}
-
-#toast.show {
-  opacity: 1;
-  bottom: 50px;
 }
 
 /* Footer */
