@@ -159,6 +159,20 @@ button {
 button:hover {
     background-color: #D996A2;
 }
+/* NAVBAR LAYOUT */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* pushes left & right apart */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 
 
 /* MENU CONTAINER */
@@ -176,7 +190,7 @@ button:hover {
 .dropdown-menu {
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 35px;
     background-color: #f3e8e8;
     width: 150px;
     border-radius: 8px;
