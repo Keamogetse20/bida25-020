@@ -24,33 +24,21 @@
     <a href="about.html">About Us</a>
     <a href="feedback.html">Feedback</a>
     <a href="returns.html">Returns</a>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div id="menu" class="dropdown">
-      <p onclick="selectCategory('Heels')">Heels</p>
-      <p onclick="selectCategory('Sneakers')">Sneakers</p>
-      <p onclick="selectCategory('Boots')">Boots</p>
-      <p onclick="selectCategory('Loafers')">Loafers</p>
+    <!-- Hamburger menu -->
+<div class="menu-container">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdown-menu">
+        <ul>
+            <li>Heels</li>
+            <li>Loafers</li>
+            <li>Boots</li>
+            <li>Sneakers</li>
+        </ul>
     </div>
+</div>
   </div>
 </nav>
 
-<!-- SLIDER -->
-<section id="slider-container" class="main-slider"></section>
-
-<!-- PRODUCTS AREA -->
-<section class="page-layout">
-
-  <!-- COLORS SIDEBAR -->
-  <aside id="color-filter" class="sidebar"></aside>
-  
-  <!-- PRODUCTS GRID -->
-  <div id="products" class="products-grid"></div>
-
-</section>
-
-<!-- TOAST -->
-<div id="toast">Added to cart</div>
-  
-<script src="script.js"></script>
-</body>
 </html>   
