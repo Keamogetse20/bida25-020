@@ -266,24 +266,27 @@ button:hover {
 .prev, .next {
     position: absolute;
     top: 50%;
+    height: 100%;
+    width: 50%;
     transform: translateY(-50%);
-    background: #d9a5a5;
+    background: transparent;
     border: none;
     color: white;
-    padding: 10px;
     cursor: pointer;
     font-size: 20px;
-    border-radius: 50%;
+    z-index: 5;
+    capacity: 0;
+    pointer-events: auto;
 }
 
 /* LEFT BUTTON */
 .prev {
-    left: 10px;
+    left: 0px;
 }
 
 /* RIGHT BUTTON */
 .next {
-    right: 10px;
+    right: 0px;
 }
 
 /* HOVER */
