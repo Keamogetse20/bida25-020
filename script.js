@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-   /* SLIDESHOW */
-    document.addEventListener("DOMContentLoaded", () => {
-
+    /* SLIDESHOW */
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
     const nextBtn = document.getElementById("nextBtn");
@@ -45,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     }, 3000);
 
-    // =========================
-    // HIDE SLIDESHOW ON CATEGORY CLICK
-    // =========================
+    /* HIDE SLIDESHOW ON CATEGORY CLICK */
     const categories = document.querySelectorAll("#dropdown-menu li");
     const slideshow = document.querySelector(".slideshow-container");
 
