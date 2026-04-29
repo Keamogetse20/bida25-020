@@ -119,6 +119,32 @@ document.querySelectorAll(".sizes span").forEach(size => {
     });
 });
 
+const productsData = [
+    {
+        name: "Red Heels",
+        category: "heels",
+        color: "red",
+        price: "P350",
+        image: "image/red-heels.jpg",
+        sizes: [3,4,5,6]
+    },
+    {
+        name: "Black Heels",
+        category: "heels",
+        color: "black",
+        price: "P360",
+        image: "image/black-heels.jpg",
+        sizes: [4,5,6,7]
+    },
+    {
+        name: "White Sneakers",
+        category: "sneakers",
+        color: "white",
+        price: "P300",
+        image: "image/sneaker.jpg",
+        sizes: [5,6,7,8]
+    }
+];
 const colorFilters = document.querySelectorAll(".color-sidebar li");
 const products = document.querySelectorAll(".product-card");
 
@@ -135,3 +161,74 @@ colorFilters.forEach(btn => {
         });
     });
 });
+function showProducts(category, selectedColor = "all") {
+    const grid = document.getElementById("productsGrid");
+    grid.innerHTML = "";
+
+    const filtered = productsData.filter(p => 
+        p.category === category &&
+        (selectedColor === "all" || p.color === selectedColor)
+    );
+
+    filtered.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML = `
+            <h4>${product.name}</h4>
+            <img src="${product.image}">
+            <p>${product.price}</p>
+            <div class="sizes" style="display:none;"></div>
+            <button class="buy-btn">Buy Now</button>
+        `;
+
+        // CLICK PRODUCT → SHOW SIZES
+        card.querySelector("img").addEventListener("click", () => {
+            const sizeBox = card.querySelector(".sizes");
+            sizeBox.style.display = "block";
+
+            sizeBox.innerHTML = product.sizes
+                .map(size => `<span class="size">${size}</span>`)
+                .join("");
+
+            // SELECT SIZE
+            sizeBox.querySelectorAll(".size").forEach(s => {
+                s.addEventListener("click", () => {
+                    sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
+                    s.classList.add("active");
+                });
+            });
+        });
+
+        // BUY BUTTON
+        card.querySelector(".buy-btn").addEventListener("click", () => {
+            alert("Added to cart");
+        });
+
+        grid.appendChild(card);
+    });
+}
+function showColors(category) {
+    const colorList = document.getElementById("colorList");
+    colorList.innerHTML = "";
+
+    const colors = [...new Set(
+        productsData
+            .filter(p => p.category === category)
+            .map(p => p.color)
+    )];
+
+    // ADD "ALL"
+    const allItem = document.createElement("li");
+    allItem.textContent = "All";
+    allItem.addEventListener("click", () => showProducts(category, "all"));
+    colorList.appendChild(allItem);
+
+    // ADD CATEGORY COLORS
+    colors.forEach(color => {
+        const li = document.createElement("li");
+        li.textContent = color;
+        li.addEventListener("click", () => showProducts(category, color));
+        colorList.appendChild(li);
+    });
+}
