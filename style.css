@@ -225,7 +225,8 @@ button:hover {
 /* SLIDESHOW CONTAINER */
 .slideshow-container {
     position: relative;
-    width: 80%;
+    width: 90%;
+    height: 450px;
     margin: 40px auto;
     overflow: hidden;
     border-radius: 20px;
@@ -234,13 +235,14 @@ button:hover {
 /* TRACK */
 .slide-track {
     display: flex;
+    height: 100%
     transition: transform 0.5s ease-in-out;
 }
 
 /* EACH SLIDE */
 .slide {
     min-width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
     pointer-events: none;
     object-position: center; 
