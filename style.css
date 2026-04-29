@@ -243,6 +243,7 @@ button:hover {
     height: 400px;
     object-fit: cover;
     pointer-events: none;
+    object-position: center; 
 }
 .prev, .next {
     position: absolute;
