@@ -326,6 +326,22 @@ button:hover {
     cursor: pointer;
 }
 
+.sizes {
+    margin: 10px 0;
+}
+
+.size {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.size.active {
+    background: pink;
+    color: white;
+}
 /* Footer */
 footer {
     background-color: #B998A6;
