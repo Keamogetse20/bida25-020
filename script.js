@@ -2,9 +2,7 @@ console.log("JS connected");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =========================
-    // DROPDOWN MENU
-    // =========================
+    /* DROPDOWN MENU */
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
 
