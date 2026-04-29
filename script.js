@@ -118,3 +118,20 @@ document.querySelectorAll(".sizes span").forEach(size => {
         size.style.background = "#d9a5a5";
     });
 });
+
+const colorFilters = document.querySelectorAll(".color-sidebar li");
+const products = document.querySelectorAll(".product-card");
+
+colorFilters.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const color = btn.dataset.color;
+
+        products.forEach(product => {
+            if (color === "all" || product.dataset.color === color) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+});
