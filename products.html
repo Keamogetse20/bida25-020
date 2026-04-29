@@ -63,42 +63,39 @@
     <button class="next" id="nextBtn">&#10095;</button>
 
 </section>
-<div class="products-section">
+  <section class="products-section">
 
-    <!-- LEFT: COLOR FILTER -->
-    <div class="color-sidebar">
-        <p>Colors</p>
+    <!-- LEFT SIDEBAR -->
+    <aside class="color-sidebar">
+        <h3>Colors</h3>
         <ul>
             <li data-color="all">All</li>
             <li data-color="black">Black</li>
             <li data-color="white">White</li>
             <li data-color="red">Red</li>
         </ul>
-    </div>
+    </aside>
 
-    <!-- RIGHT: PRODUCTS GRID -->
-    <div class="product-grid">
+    <!-- RIGHT PRODUCT GRID -->
+    <div class="products-grid" id="productsGrid">
 
-        <!-- Example product -->
-        <div class="product-card" data-category="heels" data-color="red">
-            <img src="image/heels/red1.jpg">
+        <div class="product-card" data-color="red">
             <h4>Red Heels</h4>
+            <img src="image/red-heels.jpg">
             <p>P350</p>
-            <button class="view-btn">View</button>
-
-            <!-- Sizes (hidden) -->
-            <div class="sizes">
-                <span>36</span>
-                <span>37</span>
-                <span>38</span>
-                <span>39</span>
-            </div>
+            <button>Buy Now</button>
         </div>
 
-        <!-- duplicate for other products -->
+        <div class="product-card" data-color="black">
+            <h4>Black Loafers</h4>
+            <img src="image/black-loafers.jpg">
+            <p>P300</p>
+            <button>Buy Now</button>
+        </div>
 
     </div>
-</div>  
+
+</section>
   <script src="script.js"></script>
 </body>
 </html>   
