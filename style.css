@@ -268,6 +268,49 @@ button:hover {
 .prev:hover, .next:hover {
     background: transparent;
 }
+.product-page .products-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sidebar */
+.product-page .color-sidebar {
+    width: 150px;
+}
+
+.product-page .color-sidebar li {
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+/* Grid */
+.product-page .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Cards */
+.product-page .product-card {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Sizes hidden */
+.product-page .sizes {
+    display: none;
+    margin-top: 10px;
+}
+
+.product-page .sizes span {
+    border: 1px solid #333;
+    padding: 5px;
+    margin: 3px;
+    cursor: pointer;
+}
 
 /* Footer */
 footer {
