@@ -268,16 +268,23 @@ button:hover {
 .prev:hover, .next:hover {
     background: transparent;
 }
+/* MAIN LAYOUT */
 .product-page .products-section {
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 40px;
 }
 
 /* Sidebar */
 .product-page .color-sidebar {
-    width: 150px;
+    width: 200px;
 }
+
+.color-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
 
 .product-page .color-sidebar li {
     cursor: pointer;
@@ -286,6 +293,7 @@ button:hover {
 
 /* Grid */
 .product-page .product-grid {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -294,9 +302,15 @@ button:hover {
 /* Cards */
 .product-page .product-card {
     background: #f8f8f8;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 15px;
     text-align: center;
+}
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 /* Sizes hidden */
