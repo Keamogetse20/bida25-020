@@ -63,39 +63,19 @@
     <button class="next" id="nextBtn">&#10095;</button>
 
 </section>
-  <section class="products-section">
+<section class="products-section" id="productsSection" style="display:none;">
 
-    <!-- LEFT SIDEBAR -->
+    <!-- SIDEBAR -->
     <aside class="color-sidebar">
         <h3>Colors</h3>
-        <ul>
-            <li data-color="all">All</li>
-            <li data-color="black">Black</li>
-            <li data-color="white">White</li>
-            <li data-color="red">Red</li>
-        </ul>
+        <ul id="colorList"></ul>
     </aside>
 
-    <!-- RIGHT PRODUCT GRID -->
-    <div class="products-grid" id="productsGrid">
-
-        <div class="product-card" data-color="red">
-            <h4>Red Heels</h4>
-            <img src="image/red-heels.jpg">
-            <p>P350</p>
-            <button>Buy Now</button>
-        </div>
-
-        <div class="product-card" data-color="black">
-            <h4>Black Loafers</h4>
-            <img src="image/black-loafers.jpg">
-            <p>P300</p>
-            <button>Buy Now</button>
-        </div>
-
-    </div>
+    <!-- PRODUCTS -->
+    <div class="products-grid" id="productsGrid"></div>
 
 </section>
+
   <script src="script.js"></script>
 </body>
 </html>   
