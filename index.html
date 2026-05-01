@@ -33,40 +33,61 @@
                 Welcome to Veloura, the ultimate destination for women's luxury shoes. Discover premium shoes designed for style, elegance and confidence.
             </p>
         </section>
-        
-        <section>
-            <h2>Featured Products</h2>
-            <div class="products">
-                <div class="product">
-                    <h3>Heels </h3>
-                    <img src="image/Veloura classic heels.jpg" alt="Heels">
-                    <p> Elegant heels designed for women, perfect for any formal occasion. </p>
-                    <button> Buy Now </button>
-                </div>
-                
-                <div class="product">
-                    <h3>Loafers </h3>
-                    <img src="image/Veloura premium loafers.jpg" alt="Loafers">
-                    <p> stylish and comfortable loafers designed exclusively for women.</p>
-                    <button> Buy Now </button>
-                </div>
-                
-                <div class="product">
-                    <h3>Boots </h3>
-                    <img src="image/Veloura Royal Boots.jpg" alt="Boots">
-                    <p> Luxury boots crafted for women who value elegance and comfort. </p>
-                    <button> Buy Now </button>
-                </div>
-
-                    <div class="product">
-                        <h3>Sneakers </h3>
-                        <img src="image/Veloura premium Sneakers.jpg" alt="Sneakers">
-                        <p> Stylish and comfortable sneakers. </p>
-                        <button> Buy Now </button>
-                </div>
+      <section class="container my-5">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row">
+        <!-- Heels Category -->
+        <div class="col-6 mb-4">
+            <div class="product-card text-center p-3 border rounded shadow-sm">
+                <h3>Heels</h3>
+                <!-- Image wrapped in link with mandatory attributes for marks -->
+                <a href="products.html?category=heels">
+                    <img src="image/Veloura classic heels.jpg" alt="Veloura classic heels" width="250" height="250" class="img-fluid rounded mb-2">
+                </a>
+                <p>Elegant heels designed for women, perfect for any formal occasion.</p>
+                <!-- Button wrapped in link to products page -->
+                <a href="products.html?category=heels" class="btn btn-primary">Buy Now</a>
             </div>
-        </section>
-    <section>
+        </div>
+
+        <!-- Loafers Category -->
+        <div class="col-6 mb-4">
+            <div class="product-card text-center p-3 border rounded shadow-sm">
+                <h3>Loafers</h3>
+                <a href="products.html?category=loafers">
+                    <img src="image/Veloura premium loafers.jpg" alt="Veloura premium loafers" width="250" height="250" class="img-fluid rounded mb-2">
+                </a>
+                <p>Stylish and comfortable loafers designed exclusively for women.</p>
+                <a href="products.html?category=loafers" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- Boots Category -->
+        <div class="col-6 mb-4">
+            <div class="product-card text-center p-3 border rounded shadow-sm">
+                <h3>Boots</h3>
+                <a href="products.html?category=boots">
+                    <img src="image/Veloura Royal Boots.jpg" alt="Veloura Royal Boots" width="250" height="250" class="img-fluid rounded mb-2">
+                </a>
+                <p>Luxury boots crafted for women who value elegance and comfort.</p>
+                <a href="products.html?category=boots" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- Sneakers Category -->
+        <div class="col-6 mb-4">
+            <div class="product-card text-center p-3 border rounded shadow-sm">
+                <h3>Sneakers</h3>
+                <a href="products.html?category=sneakers">
+                    <img src="image/Veloura premium Sneakers.jpg" alt="Veloura premium Sneakers" width="250" height="250" class="img-fluid rounded mb-2">
+                </a>
+                <p>Stylish and comfortable sneakers for everyday wear.</p>
+                <a href="products.html?category=sneakers" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</section>  
+      
         <h2>Contact Us</h2>
         <div class= " contact-container">
             <div class= "contact-box">
@@ -94,7 +115,6 @@
     <!-- Bootstrap JS Bundle Added -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
-    <button id="back-to-top" title="Go to top">&#8593;</button> 
     <script src="script.js"></script>
 
 </body>
