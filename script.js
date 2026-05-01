@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
+    setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
+    updateSlide(); // Update the visual position of the track [4]
+}, 3000); 
 
     // 3. Category Selection Logic [16, 21-24]
     const categories = document.querySelectorAll("#dropdown-menu li");
@@ -70,25 +74,31 @@ function renderProducts(category, colorFilter) {
         `;
 
         // Click Image -> Show Sizes [22]
-        card.querySelector("img").addEventListener("click", () => {
-            const sizeBox = card.querySelector(".sizes");
-            sizeBox.style.display = "block";
-            sizeBox.innerHTML = product.sizes.map(s => `<span class="size">${s}</span>`).join("");
-            
-            // Size Selection Logic [18]
-            sizeBox.querySelectorAll(".size").forEach(span => {
-                span.addEventListener("click", () => {
-                    sizeBox.querySelectorAll(".size").forEach(s => s.classList.remove("active"));
-                    span.classList.add("active");
-                    
-                      //  Hide after selecting a size
-            setTimeout(() => {
-                sizeBox.style.display = "none";
-                sizeBox.innerHTML = "";
-            }, 300);
-                });
+       
+card.querySelector("img").addEventListener("click", () => {
+    const sizeBox = card.querySelector(".sizes");
+
+    // Check current display state and toggle it [2]
+    if (sizeBox.style.display === "block") {
+        sizeBox.style.display = "none";
+    } else {
+        sizeBox.style.display = "block";
+        
+        // Only generate the sizes if the box is being shown [1]
+        sizeBox.innerHTML = product.sizes
+            .map(size => `<span class="size">${size}</span>`)
+            .join("");
+
+        // Re-attach selection logic so users can pick a size [3]
+        sizeBox.querySelectorAll(".size").forEach(s => {
+            s.addEventListener("click", (e) => {
+                e.stopPropagation(); // Prevents the image click from triggering [2]
+                sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
+                s.classList.add("active");
             });
         });
+    }
+});
 
         // Buy Now Button Alert
         card.querySelector(".buy-btn").addEventListener("click", () => {
