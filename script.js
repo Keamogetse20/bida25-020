@@ -13,7 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
     menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
+    
+// 1. Get the category from the URL (e.g., ?category=heels)
+const urlParams = new URLSearchParams(window.location.search);
+const categoryFromUrl = urlParams.get('category');
 
+// 2. If a category was passed in the link, trigger the filter immediately
+if (categoryFromUrl) {
+    const slideshow = document.getElementById("slideshowContainer");
+    const productsSection = document.getElementById("productsSection");
+
+    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
+    if (slideshow && productsSection) {
+        slideshow.style.display = "none";
+        productsSection.style.display = "flex";
+        
+        // Use your existing functions to show the right shoes and colors
+        // Note: Make sure these function names match your current script.js
+        showProducts(categoryFromUrl, "all");
+        showColors(categoryFromUrl); 
+    }
+}
     // 2. Slideshow Logic [14]
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
