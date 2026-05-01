@@ -80,6 +80,12 @@ function renderProducts(category, colorFilter) {
                 span.addEventListener("click", () => {
                     sizeBox.querySelectorAll(".size").forEach(s => s.classList.remove("active"));
                     span.classList.add("active");
+                    
+                      //  Hide after selecting a size
+            setTimeout(() => {
+                sizeBox.style.display = "none";
+                sizeBox.innerHTML = "";
+            }, 300);
                 });
             });
         });
