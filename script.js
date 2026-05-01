@@ -102,7 +102,7 @@ card.querySelector("img").addEventListener("click", () => {
 
         // Buy Now Button Alert
         card.querySelector(".buy-btn").addEventListener("click", () => {
-            alert("added to cut");
+            alert("added to cart");
         });
 
         grid.appendChild(card);
