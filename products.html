@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Products - Veloura</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Products - Veloura</title>
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="product-page">
+    <!-- HEADER SECTION -->
+    <header class="header text-center p-4">
+        <img src="image/logo.png" alt="Veloura Logo" width="50" height="50">
+        <h1>PRODUCTS</h1>
+        <p>Luxury women's footwear collection</p>
+    </header>
 
-<!-- HEADER -->
-<header class="header">
-  <h1>PRODUCTS</h1>
-  <p>Luxury women's footwear collection</p>
-</header>
+    <!-- NAVIGATION SECTION -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="returns.html">Returns</a>
+            
+            <!-- Dropdown Menu -->
+            <div class="menu-container">
+                <div class="menu-toggle" id="menu-toggle">☰</div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <ul>
+                        <li data-cat="heels">Heels</li>
+                        <li data-cat="loafers">Loafers</li>
+                        <li data-cat="boots">Boots</li>
+                        <li data-cat="sneakers">Sneakers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About Us</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="returns.html">Returns</a>
-    <!-- Hamburger menu -->
-<div class="menu-container">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <!--  PRODUCT SHOWCASE SLIDE  -->
+    <section class="slideshow-container" id="slideshowContainer">
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <div class="slide-track" id="slide-track">
+          
+            <img src="image/slide/shoe1.jpg" class="slide" alt="Showcase Shoe 1" width="800" height="450">
+            <img src="image/slide/shoe2.jpg" class="slide" alt="Showcase Shoe 2" width="800" height="450">
+            <img src="image/slide/shoe3.jpg" class="slide" alt="Showcase Shoe 3" width="800" height="450">
+        </div>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </section>
 
-    <!-- Dropdown Menu -->
-    <div class="dropdown-menu" id="dropdown-menu">
-        <ul>
-            <li>Heels</li>
-            <li>Loafers</li>
-            <li>Boots</li>
-            <li>Sneakers</li>
-        </ul>
-    </div>
-</div>
-  </div>
-</nav>
-  <section class="slideshow-container">
+    <!-- CATEGORY VIEW -->
+    <section class="products-section" id="productsSection" style="display:none;">
+        <!-- COLOR SIDEBAR -->
+        <aside class="color-sidebar">
+            <h3>Colors</h3>
+            <ul id="colorList">
+            </ul>
+        </aside>
 
-    <button class="prev" id="prevBtn">&#10094;</button>
+        <!-- PRODUCTS GRID -->
+        <div class="products-grid" id="productsGrid">
+        </div>
+    </section>
 
-    <div class="slide-track" id="slide-track">
-        <img src="image/slide/shoe1.jpg" class="slide">
-        <img src="image/slide/shoe2.jpg" class="slide">
-        <img src="image/slide/shoe3.jpg" class="slide">
-        <img src="image/slide/shoe4.jpg" class="slide">
-        <img src="image/slide/shoe5.jpg" class="slide">
-        <img src="image/slide/shoe6.jpg" class="slide">
-        <img src="image/slide/shoe7.jpg" class="slide">
-        <img src="image/slide/shoe8.jpg" class="slide">
-        <img src="image/slide/shoe9.jpg" class="slide">
-        <img src="image/slide/shoe10.jpg" class="slide">
-        <img src="image/slide/shoe11.jpg" class="slide">
-        <img src="image/slide/shoe12.jpg" class="slide">
-        <img src="image/slide/shoe13.jpg" class="slide">
-        <img src="image/slide/shoe14.jpg" class="slide">
-    </div>
+    <footer class="text-center p-4">
+        <p>&copy; 2026 Veloura. All rights reserved.</p>
+    </footer>
 
-    <button class="next" id="nextBtn">&#10095;</button>
-
-</section>
-<section class="products-section" id="productsSection" style="display:none;">
-
-    <!-- SIDEBAR -->
-    <aside class="color-sidebar">
-        <h3>Colors</h3>
-        <ul id="colorList"></ul>
-    </aside>
-
-    <!-- PRODUCTS -->
-    <div class="products-grid" id="productsGrid"></div>
-
-</section>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>   
+</html>
