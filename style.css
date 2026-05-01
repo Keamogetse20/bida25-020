@@ -160,13 +160,29 @@ button:hover {
     background-color: #D996A2;
 }
 /* General Layout */
-.product-page { background-color: #fdf5e6; font-family: Arial, sans-serif; }
-.header { background-color: #ecc0c0; }
+.product-page {
+    background-color: #fdf5e6;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color: #ecc0c0; 
+}
 
 /* Navigation & Dropdown [8, 9] */
-.nav-links { display: flex; gap: 20px; align-items: center; justify-content: center; padding: 10px; }
-.menu-container { position: relative; }
-.menu-toggle { font-size: 24px; cursor: pointer; }
+.nav-links {
+    display: flex; 
+    gap: 20px;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px;
+}
+.menu-container { 
+    position: relative; 
+}
+.menu-toggle { 
+    font-size: 24px; 
+    cursor: pointer; 
+}
 .dropdown-menu {
     z-index: 1000; position: absolute; right: 0; top: 35px;
     background-color: #f3e8e8; width: 150px; border-radius: 8px;
@@ -178,9 +194,47 @@ button:hover {
 .dropdown-menu li:hover { background-color: #d9a5a5; color: white; }
 
 /* Slideshow [9, 10] */
-.slideshow-container { position: relative; width: 80%; height: 450px; margin: 40px auto; overflow: hidden; border-radius: 20px; }
-.slide-track { display: flex; height: 100%; transition: transform 0.5s ease-in-out; }
-.slide { min-width: 100%; height: 100%; object-fit: cover; }
+.slideshow-container {
+    position: relative;
+    width: 90%;
+    /* Default height for Laptops [1] */
+    height: 450px; 
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments for different screen sizes */
+
+/* For Medium Screens (Tablets) - Matches medium.png [2] */
+@media (max-width: 992px) {
+    .slideshow-container {
+        height: 350px; /* Reduced height to keep proportions better */
+    }
+}
+
+/* For Small Screens (Mobile) - Matches small.png [3] */
+@media (max-width: 600px) {
+    .slideshow-container {
+        height: 250px; /* Much shorter height so images don't look stretched or overly cropped */
+        width: 95%;   /* Use more of the screen width on mobile */
+    }
+}
+
+.slide-track {
+    display: flex; 
+    height: 100%; 
+    transition: transform 0.5s ease-in-out; 
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+    /* 'cover' ensures the image fills the area, 'center' keeps the shoe in view */
+    object-fit: cover; 
+    object-position: center; 
+    pointer-events: none;
+}
 .prev, .next { 
     position: absolute; top: 50%; transform: translateY(-50%);
     width: 50px; height: 50px; background: rgba(217, 165, 165, 0.7); 
