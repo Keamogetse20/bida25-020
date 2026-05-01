@@ -1,234 +1,110 @@
 console.log("JS connected");
+// Product Database [19, 20]
+const productsData = [
+    { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/red-heels.jpg", sizes: [4-7] },
+    { name: "Midnight Loafers", category: "loafers", color: "black", price: "P280", image: "image/loafers.jpg", sizes: [6-8] },
+    { name: "Winter Boots", category: "boots", color: "white", price: "P450", image: "image/boots.jpg", sizes: [7-9] },
+    { name: "Urban Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers.jpg", sizes: [6-10] }
+];
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* DROPDOWN MENU */
+    // 1. Dropdown Toggle [13]
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
+    menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
 
-    menuToggle.addEventListener("click", () => {
-        dropdownMenu.classList.toggle("active");
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!menuToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.remove("active");
-        }
-    });
-
-    /* SLIDESHOW */
+    // 2. Slideshow Logic [14]
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
-
     let currentIndex = 0;
-
-    function updateSlide() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
+    const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    document.getElementById("nextBtn").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateSlide();
     });
-
-    prevBtn.addEventListener("click", () => {
+    document.getElementById("prevBtn").addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide();
-    }, 3000);
-
-    /* HIDE SLIDESHOW ON CATEGORY CLICK */
+    // 3. Category Selection Logic [16, 21-24]
     const categories = document.querySelectorAll("#dropdown-menu li");
-    const slideshow = document.querySelector(".slideshow-container");
+    const slideshow = document.getElementById("slideshowContainer");
+    const productsSection = document.getElementById("productsSection");
 
     categories.forEach(item => {
         item.addEventListener("click", () => {
+            const selectedCat = item.getAttribute("data-cat");
+            
+            // Swap Views (Requirements)
             slideshow.style.display = "none";
-        });
-    });
+            productsSection.style.display = "flex";
+            dropdownMenu.classList.remove("active");
 
-});
-
-const categories = document.querySelectorAll("#dropdown-menu li");
-const slideshow = document.querySelector(".slideshow-container");
-const productsSection = document.querySelector(".products-section");
-
-categories.forEach(item => {
-    item.addEventListener("click", () => {
-
-        const selectedCategory = item.textContent.toLowerCase();
-
-        slideshow.style.display = "none";
-        productsSection.style.display = "flex";
-
-        document.querySelectorAll(".product-card").forEach(card => {
-            if (card.dataset.category === selectedCategory) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-    });
-});
-const colors = document.querySelectorAll(".color-sidebar li");
-
-colors.forEach(color => {
-    color.addEventListener("click", () => {
-
-        const selectedColor = color.dataset.color;
-
-        document.querySelectorAll(".product-card").forEach(card => {
-
-            if (selectedColor === "all" || card.dataset.color === selectedColor) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-    });
-});
-const products = document.querySelectorAll(".product-card");
-
-products.forEach(product => {
-    product.addEventListener("click", () => {
-
-        const sizes = product.querySelector(".sizes");
-
-        sizes.style.display =
-            sizes.style.display === "block" ? "none" : "block";
-    });
-});
-document.querySelectorAll(".sizes span").forEach(size => {
-    size.addEventListener("click", (e) => {
-        e.stopPropagation(); // stops product click
-
-        document.querySelectorAll(".sizes span").forEach(s => {
-            s.style.background = "white";
-        });
-
-        size.style.background = "#d9a5a5";
-    });
-});
-
-const productsData = [
-    {
-        name: "Red Heels",
-        category: "heels",
-        color: "red",
-        price: "P350",
-        image: "image/red-heels.jpg",
-        sizes: [3,4,5,6]
-    },
-    {
-        name: "Black Heels",
-        category: "heels",
-        color: "black",
-        price: "P360",
-        image: "image/black-heels.jpg",
-        sizes: [4,5,6,7]
-    },
-    {
-        name: "White Sneakers",
-        category: "sneakers",
-        color: "white",
-        price: "P300",
-        image: "image/sneaker.jpg",
-        sizes: [5,6,7,8]
-    }
-];
-const colorFilters = document.querySelectorAll(".color-sidebar li");
-const products = document.querySelectorAll(".product-card");
-
-colorFilters.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const color = btn.dataset.color;
-
-        products.forEach(product => {
-            if (color === "all" || product.dataset.color === color) {
-                product.style.display = "block";
-            } else {
-                product.style.display = "none";
-            }
+            // Build Color Sidebar and Show Products
+            updateColorSidebar(selectedCat);
+            renderProducts(selectedCat, "all");
         });
     });
 });
-function showProducts(category, selectedColor = "all") {
+
+function renderProducts(category, colorFilter) {
     const grid = document.getElementById("productsGrid");
     grid.innerHTML = "";
 
     const filtered = productsData.filter(p => 
-        p.category === category &&
-        (selectedColor === "all" || p.color === selectedColor)
+        p.category === category && (colorFilter === "all" || p.color === colorFilter)
     );
 
     filtered.forEach(product => {
         const card = document.createElement("div");
-        card.classList.add("product-card");
-
+        card.className = "product-card";
         card.innerHTML = `
             <h4>${product.name}</h4>
-            <img src="${product.image}">
+            <img src="${product.image}" alt="${product.name}" width="150" height="150">
             <p>${product.price}</p>
-            <div class="sizes" style="display:none;"></div>
+            <div class="sizes"></div>
             <button class="buy-btn">Buy Now</button>
         `;
 
-        // CLICK PRODUCT → SHOW SIZES
+        // Click Image -> Show Sizes [22]
         card.querySelector("img").addEventListener("click", () => {
             const sizeBox = card.querySelector(".sizes");
             sizeBox.style.display = "block";
-
-            sizeBox.innerHTML = product.sizes
-                .map(size => `<span class="size">${size}</span>`)
-                .join("");
-
-            // SELECT SIZE
-            sizeBox.querySelectorAll(".size").forEach(s => {
-                s.addEventListener("click", () => {
-                    sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
-                    s.classList.add("active");
+            sizeBox.innerHTML = product.sizes.map(s => `<span class="size">${s}</span>`).join("");
+            
+            // Size Selection Logic [18]
+            sizeBox.querySelectorAll(".size").forEach(span => {
+                span.addEventListener("click", () => {
+                    sizeBox.querySelectorAll(".size").forEach(s => s.classList.remove("active"));
+                    span.classList.add("active");
                 });
             });
         });
 
-        // BUY BUTTON
+        // Buy Now Button Alert
         card.querySelector(".buy-btn").addEventListener("click", () => {
-            alert("Added to cart");
+            alert("added to cut");
         });
 
         grid.appendChild(card);
     });
 }
-function showColors(category) {
+
+function updateColorSidebar(category) {
     const colorList = document.getElementById("colorList");
-    colorList.innerHTML = "";
-
-    const colors = [...new Set(
-        productsData
-            .filter(p => p.category === category)
-            .map(p => p.color)
-    )];
-
-    // ADD "ALL"
-    const allItem = document.createElement("li");
-    allItem.textContent = "All";
-    allItem.addEventListener("click", () => showProducts(category, "all"));
-    colorList.appendChild(allItem);
-
-    // ADD CATEGORY COLORS
-    colors.forEach(color => {
+    colorList.innerHTML = "<li>All</li>"; // Reset with 'All' option [23]
+    
+    // Get unique colors for this category
+    const categoryColors = [...new Set(productsData.filter(p => p.category === category).map(p => p.color))];
+    
+    categoryColors.forEach(color => {
         const li = document.createElement("li");
-        li.textContent = color;
-        li.addEventListener("click", () => showProducts(category, color));
+        li.textContent = color.charAt(0).toUpperCase() + color.slice(1);
+        li.addEventListener("click", () => renderProducts(category, color));
         colorList.appendChild(li);
     });
+
+    colorList.firstChild.addEventListener("click", () => renderProducts(category, "all"));
 }
