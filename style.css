@@ -34,7 +34,7 @@ header {
 /* Logo positioning */
 .site-header .logo {
 position: absolute;
-    left: 80px;
+    left: 90px;
     height: 55px; 
     width: auto;    
     object-fit: contain;
