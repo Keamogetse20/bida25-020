@@ -321,7 +321,7 @@ nav a:hover {
     display: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     right: 20px;
-    top: 45px;
+    top: 55px;
     z-index: 9999;
 }
 .dropdown-menu.active { display: block; }
