@@ -21,6 +21,42 @@ header {
     border-bottom: 1px solid rgba(205, 184, 168, 0.6);
 }
 
+/* Header layout */
+.site-header {
+    background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* keeps text centered */
+
+    position: relative;
+}
+
+/* Logo positioning */
+.site-header .logo {
+    position: absolute;
+    left: 20px;
+    height: 70px; /* adjust size if needed */
+}
+
+/* Centered text */
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+}
+
+.header-text p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+
 h1 {
     letter-spacing: 0.10em;
     font-size: 40px;
