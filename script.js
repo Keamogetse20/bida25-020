@@ -33,7 +33,15 @@ const productsData = [
     { name: "Block Heel Pointed Pumps", category: "heels", color: "white", price: "P800", image: "image/heels/white/white-heels9.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Jeweled-heels", category: "heels", color: "white", price: "P2000", image: "image/heels/white/white-heels10.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Midnight Loafers", category: "loafers", color: "black", price: "P280", image: "image/loafers.jpg", sizes: [32,33,34,36,44,45] },
-    { name: "Winter Boots", category: "boots", color: "white", price: "P450", image: "image/boots.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Suede Stiletto Boots", category: "boots", color: "black", price: "P450", image: "image/boots/black/black-boots1.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Red-bottom Ankle Boots", category: "boots", color: "black", price: "P2000", image: "image/boots/black/black-boots2.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Block Heel Ankle Boots", category: "boots", color: "black", price: "P500", image: "image/boots/black/black-boots3.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Ankle Boots", category: "boots", color: "black", price: "P450", image: "image/boots/black/black-boots4.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Slouchy Stiletto Knee-high Boots", category: "boots", color: "black", price: "P600", image: "image/boots/black/black-boots5.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Fitted Knee-high Stiletto Boots", category: "boots", color: "black", price: "P800", image: "image/boots/black/black-boots6.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Buckle Stiletto Ankle Boots", category: "boots", color: "black", price: "P850", image: "image/boots/black/black-boots7.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Zip-up Block Heel Ankle Boots", category: "boots", color: "black", price: "P1500", image: "image/boots/black/black-boots8.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Classic Block Heel Ankle Boots", category: "boots", color: "black", price: "P1000", image: "image/boots/black/black-boots9.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Urban Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers.jpg", sizes: [37,38,39,40,45] }
 ];
 
