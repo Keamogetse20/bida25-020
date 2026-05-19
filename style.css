@@ -29,17 +29,19 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-left: 100px;
+    padding-left: 60px;
 }
 
 /* Logo positioning */
 .site-header .logo {
    
 position: absolute;
-    left: 25px;
+    left: 60px;
     height: 55px; 
     width: auto;    
     object-fit: contain;
+    top: 50%;
+    transformation: translateY(-50%)
 
 }
 
