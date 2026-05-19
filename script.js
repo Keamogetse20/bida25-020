@@ -2,6 +2,7 @@ console.log("JS connected");
 // Product Database [19, 20]
 const productsData = [
     { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels1.jpg", sizes: [38,39,40,41,42,43] },
+    { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels2.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Midnight Blossom Crystal Heels", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels1.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Noir Twist Stilletto", category: "heels", color: "black", price: "P2500", image: "image/heels/black/black-heels2.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Starlight Studded Pumps", category: "heels", color: "black", price: "P1500", image: "image/heels/black/black-heels3.jpg", sizes: [38,39,40,41,42,43] }, 
