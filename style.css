@@ -167,17 +167,18 @@ button:hover {
 nav {
     background-color: #FFF9F4;
     padding: 12px;
-    text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
     text-align: center;
-    padding-right: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.nav a {
+
+nav a {
     color: #4A4A4A;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 18px;
     font-weight: 600;
     letter-spacing: 0.04em;
     padding: 6px 8px;
@@ -197,7 +198,7 @@ nav a:hover {
     font-size: 24px; 
     cursor: pointer; 
     position: absolute;
-    right: 40px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
