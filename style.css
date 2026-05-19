@@ -23,30 +23,25 @@ header {
 
 /* Header layout */
 .site-header {
- background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
-    padding: 20px 20px;
+    background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
+    padding: 20px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    gap: 20px;
 }
 
-/* Logo positioning */
+/* Logo styling */
 .site-header .logo {
-position: absolute;
-    left: 90px;
-    height: 55px; 
-    width: auto;    
+    height: 55px;
+    width: auto;
     object-fit: contain;
-    top: 50%;
-    transform: translateY(-50%);
-
 }
 
-/* Centered text */
+/* Header text */
 .header-text {
-    text-align: center;
-    max-width: 600px;
+    text-align: left;
 }
 
 .header-text h1 {
@@ -59,6 +54,7 @@ position: absolute;
     margin: 5px 0 0;
     font-size: 16px;
 }
+
 
 
 h1 {
