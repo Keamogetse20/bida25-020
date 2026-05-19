@@ -172,6 +172,7 @@ nav {
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 
@@ -198,7 +199,7 @@ nav a:hover {
     font-size: 24px; 
     cursor: pointer; 
     position: absolute;
-    right: 10px;
+    right: 30px;
     top: 50%;
     transform: translateY(-50%);
 }
