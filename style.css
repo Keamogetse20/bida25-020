@@ -279,7 +279,6 @@ nav {
     background-color: #FFF9F4;
     padding: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,6 +311,7 @@ nav a:hover {
     color: #4A4A4A;
     display: inline-block;
     padding: 6px 8px;
+    margin-left: auto;
 }
 
 .dropdown-menu {
