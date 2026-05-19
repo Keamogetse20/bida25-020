@@ -24,24 +24,22 @@ header {
 /* Header layout */
 .site-header {
  background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
-    padding: 20px;
+    padding: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-left: 60px;
 }
 
 /* Logo positioning */
 .site-header .logo {
-   
 position: absolute;
-    left: 60px;
+    left: 20px;
     height: 55px; 
     width: auto;    
     object-fit: contain;
     top: 50%;
-    transformation: translateY(-50%)
+    transform: translateY(-50%)
 
 }
 
