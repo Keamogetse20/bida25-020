@@ -41,7 +41,20 @@
     <h1>Thank You!</h1>
     <p>Your message has been successfully submitted.</p>
 
-    <a href="contact.html">Back to Contact Page</a>
+   <a href="#" id="backLink">Go Back</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+// detect source page using URL or referrer
+if (document.referrer.includes("returns.html")) {
+    document.getElementById("backLink").href = "returns.html";
+    document.getElementById("backLink").textContent = "Back to Returns Page";
+} else {
+    document.getElementById("backLink").href = "feedback.html";
+    document.getElementById("backLink").textContent = "Back to Feedback Page";
+}
+</script>
 
 </body>
 </html>
