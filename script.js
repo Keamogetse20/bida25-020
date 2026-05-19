@@ -2,7 +2,16 @@ console.log("JS connected");
 // Product Database [19, 20]
 const productsData = [
     { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels1.jpg", sizes: [38,39,40,41,42,43] },
-    { name: "Midnight Blossom Crystal Heels", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels1.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Midnight Blossom Crystal Heels", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels1.jpg", sizes: [38,39,40,41,42,43] },
+    { name: "Noir Twist Stilletto", category: "heels", color: "black", price: "P2500", image: "image/heels/black/black-heels2.jpg", sizes: [38,39,40,41,42,43] },
+    { name: "Starlight Studded Pumps", category: "heels", color: "black", price: "P1500", image: "image/heels/black/black-heels3.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Velvet Noir Bow Heels", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels4.jpg", sizes: [38,39,40,41,42,43] },
+    { name: "Crystal Frame Courtheels", category: "heels", color: "black", price: "P3000", image: "image/heels/black/black-heels5.jpg", sizes: [38,39,40,41,42,43] },
+    { name: "Luna Bow Crystal Pumps", category: "heels", color: "black", price: "P500", image: "image/heels/black/black-heels6.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Opulence Leaf Stillettos", category: "heels", color: "black", price: "P1000", image: "image/heels/black/black-heels7.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Pearl Elite Pumps", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels8.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Royal Pearl Embblem Heels", category: "heels", color: "black", price: "P1500", image: "image/heels/black/black-heels9.jpg", sizes: [38,39,40,41,42,43] }, 
+    { name: "Sable Spark Strap Heels", category: "heels", color: "black", price: "P2000", image: "image/heels/black/black-heels10.jpg", sizes: [38,39,40,41,42,43] }, 
     { name: "Midnight Loafers", category: "loafers", color: "black", price: "P280", image: "image/loafers.jpg", sizes: [32,33,34,36,44,45] },
     { name: "Winter Boots", category: "boots", color: "white", price: "P450", image: "image/boots.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Urban Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers.jpg", sizes: [37,38,39,40,45] }
