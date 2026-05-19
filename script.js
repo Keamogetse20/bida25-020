@@ -52,6 +52,15 @@ const productsData = [
     { name: "Slouchy Knee-high Boots", category: "boots", color: "brown", price: "P1000", image: "image/boots/brown/brown-boots8.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Buckle Knee-high Boots", category: "boots", color: "brown", price: "P1500", image: "image/boots/brown/brown-boots9.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Leather Knee-high Block Heel Boots", category: "boots", color: "brown", price: "P1900", image: "image/boots/brown/brown-boots10.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Slouchy Ankle Boots", category: "boots", color: "gray", price: "P900", image: "image/boots/gray/gray-boots1.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Platform Bucket Ankle Boots", category: "boots", color: "gray", price: "P500", image: "image/boots/gray/gray-boots2.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Over-the-knee Stiletto Boots", category: "boots", color: "gray", price: "P700", image: "image/boots/gray/gray-boots3.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Knee-high Block Boots", category: "boots", color: "gray", price: "P1000", image: "image/boots/gray/gray-boots4.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Buckle Ankle Boots", category: "boots", color: "gray", price: "P400", image: "image/boots/gray/gray-boots5.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Slouchy Ankle Boots", category: "boots", color: "gray", price: "P600", image: "image/boots/gray/gray-boots6.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Tassel Wrap Ankle Boots", category: "boots", color: "gray", price: "P400", image: "image/boots/gray/gray-boots7.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Sock Stiletto Boots", category: "boots", color: "gray", price: "P750", image: "image/boots/gray/gray-boots8.jpg", sizes: [35,38,40,41,42,43,45] },
+    { name: "Slouchy Stiletto Boots", category: "boots", color: "gray", price: "P500", image: "image/boots/gray/gray-boots9.jpg", sizes: [35,38,40,41,42,43,45] },
     { name: "Urban Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers.jpg", sizes: [37,38,39,40,45] }
 ];
 
