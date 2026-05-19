@@ -23,26 +23,30 @@ header {
 
 /* Header layout */
 .site-header {
-    background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
+ background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
     padding: 20px;
-
     display: flex;
     align-items: center;
-    justify-content: center; /* keeps text centered */
-
+    justify-content: center;
     position: relative;
+    padding-left: 100px;
 }
 
 /* Logo positioning */
 .site-header .logo {
-    position: absolute;
-    left: 20px;
-    height: 70px; /* adjust size if needed */
+   
+position: absolute;
+    left: 25px;
+    height: 55px; 
+    width: auto;    
+    object-fit: contain;
+
 }
 
 /* Centered text */
 .header-text {
     text-align: center;
+    max-width: 600px;
 }
 
 .header-text h1 {
