@@ -34,12 +34,12 @@ header {
 /* Logo positioning */
 .site-header .logo {
 position: absolute;
-    left: 20px;
+    left: 80px;
     height: 55px; 
     width: auto;    
     object-fit: contain;
     top: 50%;
-    transform: translateY(-50%)
+    transform: translateY(-50%);
 
 }
 
