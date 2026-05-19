@@ -24,7 +24,7 @@ header {
 /* Header layout */
 .site-header {
     background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
-    padding: 20px; 
+    padding: 30px 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@ header {
 /* Logo styling */
 .site-header .logo {
     height: auto;
-    width: 110px;
+    width: 180px;
     object-fit: contain;
     margin-right: 20px;
     filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
