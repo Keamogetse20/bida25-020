@@ -279,14 +279,16 @@ nav {
     background-color: #FFF9F4;
     padding: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    text-align: center;
-}
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
 nav a {
     color: #4A4A4A;
     text-decoration: none;
-    margin: 0 18px;
     font-weight: 600;
     letter-spacing: 0.04em;
     padding: 6px 8px;
@@ -302,8 +304,8 @@ nav a:hover {
 .menu-container { 
     position: relative;
     display: inline-block;
-    z-index: 9999;
 }
+
 .menu-toggle { 
     font-size: 24px; 
     cursor: pointer; 
@@ -311,11 +313,12 @@ nav a:hover {
     display: inline-block;
     padding: 6px 8px;
 }
+
 .dropdown-menu {
-position: absolute;
+    position: absolute;
+    top: 100%;
     right: 0;
-    top: 100%;   /* sits directly below the toggle */
-    margin-top: 5px; /* small gap */
+    margin-top: 5px;
     background-color: #f3e8e8;
     width: 150px;
     border-radius: 8px;
