@@ -42,6 +42,16 @@ const productsData = [
     { name: "Buckle Stiletto Ankle Boots", category: "boots", color: "black", price: "P850", image: "image/boots/black/black-boots7.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Zip-up Block Heel Ankle Boots", category: "boots", color: "black", price: "P1500", image: "image/boots/black/black-boots8.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Classic Block Heel Ankle Boots", category: "boots", color: "black", price: "P1000", image: "image/boots/black/black-boots9.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Block Heel Ankle Boots", category: "boots", color: "brown", price: "P1000", image: "image/boots/brown/brown-boots1.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Suede Block Heel Ankle Boots", category: "boots", color: "brown", price: "P500", image: "image/boots/brown/brown-boots2.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Chunkey Chelsea Boots", category: "boots", color: "brown", price: "P600", image: "image/boots/brown/brown-boots3.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Buckle Strap Ankle Boots", category: "boots", color: "brown", price: "P450", image: "image/boots/brown/brown-boots4.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Slouchy Knee-high Boots", category: "boots", color: "brown", price: "P700", image: "image/boots/brown/brown-boots5.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Flat over-the-knee Boots", category: "boots", color: "brown", price: "P500", image: "image/boots/brown/brown-boots6.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Fold-over Ankle Boots", category: "boots", color: "brown", price: "P400", image: "image/boots/brown/brown-boots7.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Slouchy Knee-high Boots", category: "boots", color: "brown", price: "P1000", image: "image/boots/brown/brown-boots8.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Buckle Knee-high Boots", category: "boots", color: "brown", price: "P1500", image: "image/boots/brown/brown-boots9.jpg", sizes: [36,37,40,41,42,43] },
+    { name: "Leather Knee-high Block Heel Boots", category: "boots", color: "brown", price: "P1900", image: "image/boots/brown/brown-boots10.jpg", sizes: [36,37,40,41,42,43] },
     { name: "Urban Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers.jpg", sizes: [37,38,39,40,45] }
 ];
 
