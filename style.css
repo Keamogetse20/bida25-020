@@ -202,6 +202,8 @@ button:hover {
     z-index: 1000; position: absolute; right: 0; top: 35px;
     background-color: #f3e8e8; width: 150px; border-radius: 8px;
     display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    right: 20px
+    top: 45px
 }
 .dropdown-menu.active { display: block; }
 .dropdown-menu ul { list-style: none; padding: 0; margin: 0; }
