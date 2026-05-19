@@ -196,9 +196,9 @@ button:hover {
 /* Slideshow [9, 10] */
 .slideshow-container {
     position: relative;
-    max-width: 500px;
+    max-width: 450%;
     /* Default height for Laptops [1] */
-    height: 500px; 
+    height: 450px; 
     margin: px auto;
     overflow: hidden;
     border-radius: 20px;
@@ -234,6 +234,7 @@ button:hover {
     object-fit: contain; 
     object-position: center; 
     pointer-events: none;
+    background-color: #F8F8F8
 }
 .prev, .next { 
     position: absolute; top: 50%; transform: translateY(-50%);
