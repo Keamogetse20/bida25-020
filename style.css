@@ -415,7 +415,7 @@ nav a:hover {
 }
 .product-card img { 
     width: 100%; 
-    height: 220px; 
+    height: autopx; 
     object-fit: contain; 
     border-radius: 10px;
     cursor: pointer; 
