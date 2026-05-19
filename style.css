@@ -308,7 +308,7 @@ nav a:hover {
     font-size: 24px; 
     cursor: pointer; 
     color: #4A4A4A;
-    display: inline-bloch;
+    display: inline-block;
     padding: 6px 8px;
 }
 .dropdown-menu {
