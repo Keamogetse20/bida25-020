@@ -384,20 +384,69 @@ nav a:hover {
 .prev { left: 10px; }
 
 /* Category View Grid (Matches page template (9).png) [10-12] */
-.products-section { display: flex; gap: 30px; padding: 40px; }
-.color-sidebar { width: 200px; font-weight: bold; }
-.color-sidebar li { cursor: pointer; margin: 10px 0; list-style: none; }
+.products-section {
+    display: flex;
+     gap: 30px; 
+    padding: 40px; 
+}
+.color-sidebar {
+    width: 200px;
+     font-weight: bold;
+}
+.color-sidebar li {
+    cursor: pointer; 
+    margin: 10px 0; 
+    list-style: none; 
+}
 .color-sidebar li:hover { color: #d9a5a5; }
 
-.products-grid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.product-card { background: #fff; padding: 15px; border-radius: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.product-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; cursor: pointer; }
+.products-grid { 
+    flex: 1; 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+.product-card { 
+    background: #fff;
+    padding: 15px; 
+    border-radius: 15px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.product-card img { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: contain; 
+    border-radius: 10px;
+    cursor: pointer; 
+    background-color: #fff;
+}
 
 /* Sizes */
-.sizes { margin: 10px 0; display: none; }
-.size { display: inline-block; padding: 5px 10px; margin: 5px; border: 1px solid #ccc; cursor: pointer; border-radius: 5px; }
-.size.active { background: #d9a5a5; color: white; }
-.buy-btn { background-color: #d9a5a5; border: none; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+.sizes {
+    margin: 10px 0; 
+    display: none;
+}
+.size {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer; 
+    border-radius: 5px;
+}
+.size.active {
+    background: #d9a5a5; 
+    color: white; 
+}
+.buy-btn { 
+    background-color: #d9a5a5;
+    border: none; 
+    color: white; 
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
 
 /* Footer */
 footer {
