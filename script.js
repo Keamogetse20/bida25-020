@@ -30,8 +30,8 @@ if (categoryFromUrl) {
         
         // Use your existing functions to show the right shoes and colors
         // Note: Make sure these function names match your current script.js
-        showProducts(categoryFromUrl, "all");
-        showColors(categoryFromUrl); 
+        renderProducts(categoryFromUrl, "all");
+        updateColorSidebar(categoryFromUrl); 
     }
 }
     // 2. Slideshow Logic [14]
