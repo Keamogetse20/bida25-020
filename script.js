@@ -77,14 +77,14 @@ const productsData = [
     { name: "Tassel Wrap Ankle Boots", category: "boots", color: "gray", price: "P400", image: "image/boots/gray/gray-boots7.jpg", sizes: [35,38,40,41,42,43,45] },
     { name: "Sock Stiletto Boots", category: "boots", color: "gray", price: "P750", image: "image/boots/gray/gray-boots8.jpg", sizes: [35,38,40,41,42,43,45] },
     { name: "Slouchy Stiletto Boots", category: "boots", color: "gray", price: "P500", image: "image/boots/gray/gray-boots9.jpg", sizes: [35,38,40,41,42,43,45] },
-    { name: "Platform Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers/black/black-snekers1.jpg", sizes: [37,38,39,40,45] },
-    { name: "classic Low-top Sneakers", category: "sneakers", color: "black", price: "P400", image: "image/sneakers/black/black-snekers2.jpg", sizes: [37,38,39,40,45] },
-    { name: "Chunky Sneakers", category: "sneakers", color: "black", price: "P350", image: "image/sneakers/black/black-snekers3.jpg", sizes: [37,38,39,40,45] },
-    { name: "White sole low top Sneakers", category: "sneakers", color: "black", price: "P450", image: "image/sneakers/black/black-snekers4.jpg", sizes: [37,38,39,40,45] },
-    { name: "Puma Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-snekers5.jpg", sizes: [37,38,39,40,45] },
-    { name: "Vans of the wall Sneakers", category: "sneakers", color: "black", price: "P1500", image: "image/sneakers/black/black-snekers6.jpg", sizes: [37,38,39,40,45] },
-    { name: "Minimalist Low Top Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers/black/black-snekers7.jpg", sizes: [37,38,39,40,45] },
-    { name: "Addidas Campus Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-snekers8.jpg", sizes: [37,38,39,40,45] }
+    { name: "Platform Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers/black/black-sneakers1.jpg", sizes: [37,38,39,40,45] },
+    { name: "classic Low-top Sneakers", category: "sneakers", color: "black", price: "P400", image: "image/sneakers/black/black-sneakers2.jpg", sizes: [37,38,39,40,45] },
+    { name: "Chunky Sneakers", category: "sneakers", color: "black", price: "P350", image: "image/sneakers/black/black-sneakers3.jpg", sizes: [37,38,39,40,45] },
+    { name: "White sole low top Sneakers", category: "sneakers", color: "black", price: "P450", image: "image/sneakers/black/black-sneakers4.jpg", sizes: [37,38,39,40,45] },
+    { name: "Puma Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-sneakers5.jpg", sizes: [37,38,39,40,45] },
+    { name: "Vans of the wall Sneakers", category: "sneakers", color: "black", price: "P1500", image: "image/sneakers/black/black-sneakers6.jpg", sizes: [37,38,39,40,45] },
+    { name: "Minimalist Low Top Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers/black/black-sneakers7.jpg", sizes: [37,38,39,40,45] },
+    { name: "Addidas Campus Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-sneakers8.jpg", sizes: [37,38,39,40,45] }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
