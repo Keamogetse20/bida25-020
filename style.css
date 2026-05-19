@@ -172,7 +172,7 @@ form {
     flex-direction: column;
 }
 
-/* Returns form styling */
+/*forms styling */
 form label {
     font-weight: bold;
     margin-top: 15px;
