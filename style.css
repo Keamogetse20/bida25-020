@@ -95,6 +95,13 @@ section {
     border-color: rgba(212, 175, 55, 0.55);
 }
 
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+``
+
 /* Images */
 .product img {
     width: 100%;
