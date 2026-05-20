@@ -84,7 +84,14 @@ const productsData = [
     { name: "Puma Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-sneakers5.jpg", sizes: [37,38,39,40,45] },
     { name: "Vans of the wall Sneakers", category: "sneakers", color: "black", price: "P1500", image: "image/sneakers/black/black-sneakers6.jpg", sizes: [37,38,39,40,45] },
     { name: "Minimalist Low Top Sneakers", category: "sneakers", color: "black", price: "P300", image: "image/sneakers/black/black-sneakers7.jpg", sizes: [37,38,39,40,45] },
-    { name: "Addidas Campus Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-sneakers8.jpg", sizes: [37,38,39,40,45] }
+    { name: "Addidas Campus Sneakers", category: "sneakers", color: "black", price: "P1000", image: "image/sneakers/black/black-sneakers8.jpg", sizes: [37,38,39,40,45] },
+    { name: "Air Jordan 4 Sneakers", category: "sneakers", color: "pink", price: "P1500", image: "image/sneakers/pink/pink-sneakers1.jpg", sizes: [37,38,39,40,45] },
+    { name: "Addidas Capums Sneakers", category: "sneakers", color: "pink", price: "P1000", image: "image/sneakers/pink/pink-sneakers2.jpg", sizes: [37,38,39,40,45] },
+    { name: "Nike Air Force 1 Sneakers", category: "sneakers", color: "pink", price: "P800", image: "image/sneakers/pink/pink-sneakers3.jpg", sizes: [37,38,39,40,45] },
+    { name: "Nike Air 1 Force Sneakers", category: "sneakers", color: "pink", price: "P2000", image: "image/sneakers/pink/pink-sneakers4.jpg", sizes: [37,38,39,40,45] },
+    { name: "Chunky Star Platform Sneakers", category: "sneakers", color: "pink", price: "P400", image: "image/sneakers/pink/pink-sneakers5.jpg", sizes: [37,38,39,40,45] },
+    { name: "Louis Vuitton Sneakers", category: "sneakers", color: "pink", price: "P2500", image: "image/sneakers/pink/pink-sneakers6.jpg", sizes: [37,38,39,40,45] },
+     { name: "Pink & white platform Sneakers", category: "sneakers", color: "pink", price: "P1000", image: "image/sneakers/pink/pink-sneakers7.jpg", sizes: [37,38,39,40,45] },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
