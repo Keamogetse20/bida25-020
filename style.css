@@ -408,11 +408,10 @@ nav a:hover {
 }
 .color-sidebar li:hover { color: #d9a5a5; }
 
-.products-grid { 
-    flex: 1; 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .product-card { 
     background: #fff;
