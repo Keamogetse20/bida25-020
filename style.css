@@ -197,7 +197,7 @@ section {
     font-size: 16px;
     margin-bottom: 5px;
 }
-.crontact-box p {
+.contact-box p {
     font-size: 14px;
     margin: 2px 0;
 }
@@ -392,10 +392,14 @@ nav a:hover {
 .prev { left: 10px; }
 
 /* Category View Grid (Matches page template (9).png) [10-12] */
-.products-section {
-    display: flex;
-     gap: 30px; 
-    padding: 40px; 
+@media (max-width: 768px) {
+  .products-section {
+    flex-direction: column;
+  }
+
+  .color-sidebar {
+    width: 100%;
+  }
 }
 .color-sidebar {
     width: 200px;
