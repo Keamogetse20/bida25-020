@@ -91,7 +91,14 @@ const productsData = [
     { name: "Nike Air 1 Force Sneakers", category: "sneakers", color: "pink", price: "P2000", image: "image/sneakers/pink/pink-sneakers4.jpg", sizes: [37,38,39,40,45] },
     { name: "Chunky Star Platform Sneakers", category: "sneakers", color: "pink", price: "P400", image: "image/sneakers/pink/pink-sneakers5.jpg", sizes: [37,38,39,40,45] },
     { name: "Louis Vuitton Sneakers", category: "sneakers", color: "pink", price: "P2500", image: "image/sneakers/pink/pink-sneakers6.jpg", sizes: [37,38,39,40,45] },
-    { name: "Pink & white platform Sneakers", category: "sneakers", color: "pink", price: "P1000", image: "image/sneakers/pink/pink-sneakers7.jpg", sizes: [37,38,39,40,45] }
+    { name: "Pink & white platform Sneakers", category: "sneakers", color: "pink", price: "P1000", image: "image/sneakers/pink/pink-sneakers7.jpg", sizes: [37,38,39,40,45] },
+    { name: "Platform White Sneakers", category: "sneakers", color: "white", price: "P300", image: "image/sneakers/white/white-sneakers1.jpg", sizes: [37,38,39,40,45] },
+    { name: "Minimalist Platform Sneakers", category: "sneakers", color: "white", price: "P250", image: "image/sneakers/white/white-sneakers2.jpg", sizes: [37,38,39,40,45] },
+    { name: "Butterfly Print Sneakers", category: "sneakers", color: "white", price: "P350", image: "image/sneakers/white/white-sneakers3.jpg", sizes: [37,38,39,40,45] },
+    { name: "Chucky Platform Sneakers", category: "sneakers", color: "white", price: "P300", image: "image/sneakers/white/white-sneakers4.jpg", sizes: [37,38,39,40,45] },
+    { name: "Velcro strap Sneakers", category: "sneakers", color: "white", price: "P400", image: "image/sneakers/white/white-sneakers5.jpg", sizes: [37,38,39,40,45] },
+    { name: "Classic White Sneakers", category: "sneakers", color: "white", price: "P450", image: "image/sneakers/white/white-sneakers6.jpg", sizes: [37,38,39,40,45] },
+    { name: "Chunky Sneakers", category: "sneakers", color: "white", price: "P600", image: "image/sneakers/white/white-sneakers7.jpg", sizes: [37,38,39,40,45] }    
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
