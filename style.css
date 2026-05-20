@@ -136,7 +136,11 @@ section {
     box-shadow: 0 14px 30px rgba(0,0,0,0.12);
     border-color: rgba(212, 175, 55, 0.55);
 }
-
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+}
 @media (max-width: 768px) {
   .featured-grid {
     grid-template-columns: 1fr;
@@ -392,6 +396,29 @@ nav a:hover {
 .prev { left: 10px; }
 
 /* Category View Grid (Matches page template (9).png) [10-12] */
+/* Desktop (default) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  gap: 20px;
+}
+
+.color-sidebar {
+  width: 200px;
+  font-weight: bold;
+}
+
+.color-sidebar li {
+  cursor: pointer;
+  margin: 10px 0;
+  list-style: none;
+}
+
+.color-sidebar li:hover {
+  color: #d9a5a5;
+}
+
+/* Mobile only */
 @media (max-width: 768px) {
   .products-section {
     flex-direction: column;
@@ -400,29 +427,19 @@ nav a:hover {
   .color-sidebar {
     width: 100%;
   }
-}
-.color-sidebar {
-    width: 200px;
-     font-weight: bold;
-}
-.color-sidebar li {
-    cursor: pointer; 
-    margin: 10px 0; 
-    list-style: none; 
-}
-.color-sidebar li:hover { color: #d9a5a5; }
 
-@media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 per row ONLY on mobile */
   }
 }
-.product-card { 
-    background: #fff;
-    padding: 15px; 
-    border-radius: 15px; 
-    text-align: center; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* Product card */
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .product-card img { 
     width: 100%; 
