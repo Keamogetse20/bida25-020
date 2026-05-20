@@ -516,10 +516,20 @@ nav a:hover {
 }
 /* Footer */
 footer {
-    background-color: #B998A6;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 12px;
+  background-color: #B998A6;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  display: block;
+  position: relative;
+  margin-top: 40px;
+  width: 100vw;   /* full screen width */
+  margin-left: calc(-50vw + 50%);
 }
-
-
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
