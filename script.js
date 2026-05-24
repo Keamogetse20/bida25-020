@@ -111,7 +111,6 @@ const categoryFromUrl = urlParams.get('category');
 
 // 2. If a category was passed in the link, trigger the filter immediately
 if (categoryFromUrl) {
-    const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
     // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
