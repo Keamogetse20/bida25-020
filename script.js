@@ -111,17 +111,15 @@ const categoryFromUrl = urlParams.get('category');
 
 // 2. If a category was passed in the link, trigger the filter immediately
 if (categoryFromUrl) {
+    const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
-    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
     if (slideshow && productsSection) {
         slideshow.style.display = "none";
-        productsSection.style.display = "flex";
-        
-        // Use your existing functions to show the right shoes and colors
-        // Note: Make sure these function names match your current script.js
+        productsSection.style.display = "flex"; // ✅ IMPORTANT change
+
         renderProducts(categoryFromUrl, "all");
-        updateColorSidebar(categoryFromUrl); 
+        updateColorSidebar(categoryFromUrl);
     }
 }
     // 2. Slideshow Logic [14]
@@ -148,22 +146,22 @@ if (categoryFromUrl) {
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
-    categories.forEach(item => {
-        item.addEventListener("click", () => {
-            const selectedCat = item.getAttribute("data-cat");
-            
-            // Swap Views (Requirements)
+categories.forEach(item => {
+    item.addEventListener("click", function () {
+        const selectedCat = this.getAttribute("data-cat");
+
+        const slideshow = document.getElementById("slideshowContainer");
+        const productsSection = document.getElementById("productsSection");
+
+        if (slideshow && productsSection) {
             slideshow.style.display = "none";
             productsSection.style.display = "flex";
-            dropdownMenu.classList.remove("active");
+        }
 
-            // Build Color Sidebar and Show Products
-            updateColorSidebar(selectedCat);
-            renderProducts(selectedCat, "all");
-        });
+        updateColorSidebar(selectedCat);
+        renderProducts(selectedCat, "all");
     });
 });
-
 function renderProducts(category, colorFilter) {
     const grid = document.getElementById("productsGrid");
     grid.innerHTML = "";
