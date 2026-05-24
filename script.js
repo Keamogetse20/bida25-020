@@ -118,6 +118,7 @@ if (categoryFromUrl) {
     if (slideshow && productsSection) {
         slideshow.style.display = "none";
         productsSection.style.display = "flex";
+        document.querySelector(".color-sidebar").style.display = "block";
         
         // Use your existing functions to show the right shoes and colors
         // Note: Make sure these function names match your current script.js
