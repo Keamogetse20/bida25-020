@@ -7,11 +7,6 @@ body {
     line-height: 1.65;
 }
 
-body {
-    background-color: #FAF3E3;
-}
-
-
 /* Header */
 header {
     background: linear-gradient(135deg, #F7DDE2, #E8AEB7);
@@ -106,17 +101,7 @@ section {
     box-shadow: 0 10px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* Products Layout */
-.products {
-    display: grid;
-    margin: 0 auto;
-    max-width: 900px;
-    gap: 22px;
-    padding: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Product Card */
+/* Products Layout*/
 .product {
     background: linear-gradient(180deg, #FFFFFF, #FFF6F8 65%, #FFF7F2);
     border: 2px solid rgba(205, 184, 168, 0.6);
@@ -131,11 +116,6 @@ section {
     flex-direction: column;
 }
 
-.featured-box .product:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-    border-color: rgba(212, 175, 55, 0.55);
-}
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
@@ -150,22 +130,29 @@ section {
     flex-direction: column;
     text-align: center;
   }
-    /* ONLY affects homepage featured products */
+  nav {
+    flex-wrap: wrap;
+  }
+}
 .featured-box .product-card {
   background: #F7F2F2;
   padding: 15px;
   border-radius: 20px;
 
-  border: 1.5px solid #D4AF37;  
-  box-shadow: none;             
+  border: 1.5px solid rgba(205, 184, 168, 0.7);
+  box-shadow: none;
 
   text-align: center;
+
+  transition: all 0.3s ease;
+}
+/*  Hover lift effect */
+.featured-box .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  border-color: #D4AF37;
 }
 
-  nav {
-    flex-wrap: wrap;
-  }
-}
 
 /* Images */
 .product img {
@@ -291,9 +278,8 @@ form textarea {
 .submit-btn:hover {
     background-color: #c58f8f;
 }
-``
 
-/* General Layout */
+/*Product page style*/
 .product-page {
     background-color: #FAF3E3;
     font-family: Arial, sans-serif;
@@ -450,26 +436,6 @@ nav a:hover {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* homepage featured products */
-.featured-box .product-card {
-  background: #F7F2F2;
-  padding: 15px;
-  border-radius: 20px;
-
-  border: 1.5px solid rgba(205, 184, 168, 0.7); /* soft gold */
-  box-shadow: none;
-
-  text-align: center;
-
-  transition: all 0.3s ease; /* smooth animation */
-}
-/*  Hover lift effect */
-.featured-box .product-card:hover {
-  transform: translateY(-8px); /* move up */
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* soft shadow */
-  border-color: #D4AF37; /* stronger gold */
 }
 
 .product-card img { 
