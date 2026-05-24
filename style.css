@@ -150,6 +150,17 @@ section {
     flex-direction: column;
     text-align: center;
   }
+    /* ONLY affects homepage featured products */
+.featured-box .product-card {
+  background: #F7F2F2;
+  padding: 15px;
+  border-radius: 20px;
+
+  border: 1.5px solid #D4AF37;  
+  box-shadow: none;             
+
+  text-align: center;
+}
 
   nav {
     flex-wrap: wrap;
@@ -433,14 +444,6 @@ nav a:hover {
   }
 }
 
-/* Product card */
-.product-card {
-  background: #fff;
-  padding: 15px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
 .product-card img { 
     width: 100%; 
     height: auto; 
