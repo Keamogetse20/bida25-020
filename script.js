@@ -105,7 +105,10 @@ const menuToggle = document.getElementById("menu-toggle");
 const dropdownMenu = document.getElementById("dropdown-menu");
 
 if (menuToggle && dropdownMenu) {
-    menuToggle.addEventListener("click
+    menuToggle.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("active");
+    });
+}
     
 // 1. Get the category from the URL (e.g., ?category=heels)
 const urlParams = new URLSearchParams(window.location.search);
@@ -129,19 +132,29 @@ if (categoryFromUrl) {
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
     const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
-    document.getElementById("nextBtn").addEventListener("click", () => {
+    const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+if (track && slides.length > 0 && nextBtn && prevBtn) {
+
+    const updateSlide = () => 
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    nextBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateSlide();
     });
-    document.getElementById("prevBtn").addEventListener("click", () => {
+
+    prevBtn.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
+
     setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
-    updateSlide(); // Update the visual position of the track [4]
-}, 3000); 
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+    }, 3000);
+}
 
     // 3. Category Selection Logic [16, 21-24]
 const categories = document.querySelectorAll("#dropdown-menu li");
@@ -163,24 +176,8 @@ if (categories.length > 0) {
             renderProducts(selectedCat, "all");
         });
     });
-}
-
-categories.forEach(item => {
-    item.addEventListener("click", function () {
-        const selectedCat = this.getAttribute("data-cat");
-
-        const slideshow = document.getElementById("slideshowContainer");
-        const productsSection = document.getElementById("productsSection");
-
-        if (slideshow && productsSection) {
-            slideshow.style.display = "none";
-            productsSection.style.display = "flex";
-        }
-
-        updateColorSidebar(selectedCat);
-        renderProducts(selectedCat, "all");
-    });
 });
+
 function renderProducts(category, colorFilter) {
     const grid = document.getElementById("productsGrid");
     grid.innerHTML = "";
