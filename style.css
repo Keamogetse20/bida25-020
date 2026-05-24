@@ -443,6 +443,14 @@ nav a:hover {
     grid-template-columns: 1fr; /* 1 per row ONLY on mobile */
   }
 }
+/* Product card */
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
 .product-card img { 
     width: 100%; 
