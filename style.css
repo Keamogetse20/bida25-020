@@ -452,6 +452,26 @@ nav a:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* homepage featured products */
+.featured-box .product-card {
+  background: #F7F2F2;
+  padding: 15px;
+  border-radius: 20px;
+
+  border: 1.5px solid rgba(205, 184, 168, 0.7); /* soft gold */
+  box-shadow: none;
+
+  text-align: center;
+
+  transition: all 0.3s ease; /* smooth animation */
+}
+/*  Hover lift effect */
+.featured-box .product-card:hover {
+  transform: translateY(-8px); /* move up */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12); /* soft shadow */
+  border-color: #D4AF37; /* stronger gold */
+}
+
 .product-card img { 
     width: 100%; 
     height: auto; 
