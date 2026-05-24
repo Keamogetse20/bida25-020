@@ -116,11 +116,6 @@ section {
     flex-direction: column;
 }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px;
-}
 @media (max-width: 768px) {
   .featured-grid {
     grid-template-columns: 1fr;
