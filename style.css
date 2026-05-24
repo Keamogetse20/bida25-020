@@ -449,6 +449,11 @@ nav a:hover {
     cursor: pointer; 
     background-color: #fff;
 }
+.products-section {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
 
 /* Sizes */
 .sizes {
