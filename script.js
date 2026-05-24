@@ -150,18 +150,22 @@ if (categoryFromUrl) {
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
-    categories.forEach(item => {
-        item.addEventListener("click", () => {
-            const selectedCat = item.getAttribute("data-cat");
-            
-            // Swap Views (Requirements)
-            slideshow.style.display = "none";
-            productsSection.style.display = "flex";
-            dropdownMenu.classList.remove("active");
+categories.forEach(item => {
+    item.addEventListener("click", () => {
+        const selectedCat = item.getAttribute("data-cat");
 
-            // Build Color Sidebar and Show Products
-            updateColorSidebar(selectedCat);
-            renderProducts(selectedCat, "all");
+        slideshow.style.display = "none";
+        productsSection.style.display = "flex";
+
+        // ✅ ADD THIS LINE
+        document.querySelector(".color-sidebar").style.display = "block";
+
+        dropdownMenu.classList.remove("active");
+
+        updateColorSidebar(selectedCat);
+        renderProducts(selectedCat, "all");
+
+  
         });
     });
 });
