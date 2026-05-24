@@ -101,9 +101,11 @@ const productsData = [
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Dropdown Toggle [13]
-    const menuToggle = document.getElementById("menu-toggle");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-    menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
+const menuToggle = document.getElementById("menu-toggle");
+const dropdownMenu = document.getElementById("dropdown-menu");
+
+if (menuToggle && dropdownMenu) {
+    menuToggle.addEventListener("click
     
 // 1. Get the category from the URL (e.g., ?category=heels)
 const urlParams = new URLSearchParams(window.location.search);
@@ -142,9 +144,26 @@ if (categoryFromUrl) {
 }, 3000); 
 
     // 3. Category Selection Logic [16, 21-24]
-    const categories = document.querySelectorAll("#dropdown-menu li");
-    const slideshow = document.getElementById("slideshowContainer");
-    const productsSection = document.getElementById("productsSection");
+const categories = document.querySelectorAll("#dropdown-menu li");
+
+if (categories.length > 0) {
+    categories.forEach(item => {
+        item.addEventListener("click", function () {
+            const selectedCat = this.getAttribute("data-cat");
+
+            const slideshow = document.getElementById("slideshowContainer");
+            const productsSection = document.getElementById("productsSection");
+
+            if (slideshow && productsSection) {
+                slideshow.style.display = "none";
+                productsSection.style.display = "flex";
+            }
+
+            updateColorSidebar(selectedCat);
+            renderProducts(selectedCat, "all");
+        });
+    });
+}
 
 categories.forEach(item => {
     item.addEventListener("click", function () {
