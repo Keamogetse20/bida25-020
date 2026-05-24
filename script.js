@@ -101,14 +101,9 @@ const productsData = [
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Dropdown Toggle [13]
-const menuToggle = document.getElementById("menu-toggle");
-const dropdownMenu = document.getElementById("dropdown-menu");
-
-if (menuToggle && dropdownMenu) {
-    menuToggle.addEventListener("click", () => {
-        dropdownMenu.classList.toggle("active");
-    });
-}
+    const menuToggle = document.getElementById("menu-toggle");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
     
 // 1. Get the category from the URL (e.g., ?category=heels)
 const urlParams = new URLSearchParams(window.location.search);
@@ -119,12 +114,15 @@ if (categoryFromUrl) {
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
+    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
     if (slideshow && productsSection) {
         slideshow.style.display = "none";
-        productsSection.style.display = "flex"; // ✅ IMPORTANT change
-
+        productsSection.style.display = "flex";
+        
+        // Use your existing functions to show the right shoes and colors
+        // Note: Make sure these function names match your current script.js
         renderProducts(categoryFromUrl, "all");
-        updateColorSidebar(categoryFromUrl);
+        updateColorSidebar(categoryFromUrl); 
     }
 }
     // 2. Slideshow Logic [14]
@@ -132,46 +130,35 @@ if (categoryFromUrl) {
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
     const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-
-if (track && slides.length > 0 && nextBtn && prevBtn) {
-
-    const updateSlide = () => 
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    nextBtn.addEventListener("click", () => {
+    
+    document.getElementById("nextBtn").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateSlide();
     });
-
-    prevBtn.addEventListener("click", () => {
+    document.getElementById("prevBtn").addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
-
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide();
-    }, 3000);
-}
+    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
+    updateSlide(); // Update the visual position of the track [4]
+}, 3000); 
 
     // 3. Category Selection Logic [16, 21-24]
-const categories = document.querySelectorAll("#dropdown-menu li");
+    const categories = document.querySelectorAll("#dropdown-menu li");
+    const slideshow = document.getElementById("slideshowContainer");
+    const productsSection = document.getElementById("productsSection");
 
-if (categories.length > 0) {
     categories.forEach(item => {
-        item.addEventListener("click", function () {
-            const selectedCat = this.getAttribute("data-cat");
+        item.addEventListener("click", () => {
+            const selectedCat = item.getAttribute("data-cat");
+            
+            // Swap Views (Requirements)
+            slideshow.style.display = "none";
+            productsSection.style.display = "flex";
+            dropdownMenu.classList.remove("active");
 
-            const slideshow = document.getElementById("slideshowContainer");
-            const productsSection = document.getElementById("productsSection");
-
-            if (slideshow && productsSection) {
-                slideshow.style.display = "none";
-                productsSection.style.display = "flex";
-            }
-
+            // Build Color Sidebar and Show Products
             updateColorSidebar(selectedCat);
             renderProducts(selectedCat, "all");
         });
@@ -249,3 +236,4 @@ function updateColorSidebar(category) {
 
     colorList.firstChild.addEventListener("click", () => renderProducts(category, "all"));
 }
+
