@@ -1,5 +1,5 @@
 console.log("JS connected");
-
+// Product Database [19, 20]
 const productsData = [
     { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels1.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Jeweled Buckle Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels2.jpg", sizes: [38,39,40,41,42,43] },
@@ -100,30 +100,35 @@ const productsData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Dropdown Toggle [13]
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
     menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
     
+// 1. Get the category from the URL (e.g., ?category=heels)
 const urlParams = new URLSearchParams(window.location.search);
 const categoryFromUrl = urlParams.get('category');
 
+// 2. If a category was passed in the link, trigger the filter immediately
 if (categoryFromUrl) {
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
+    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
     if (slideshow && productsSection) {
         slideshow.style.display = "none";
         productsSection.style.display = "flex";
-        document.querySelector(".color-sidebar").style.display = "block";
-    
+        
+        // Use your existing functions to show the right shoes and colors
+        // Note: Make sure these function names match your current script.js
         renderProducts(categoryFromUrl, "all");
         updateColorSidebar(categoryFromUrl); 
     }
 }
+    // 2. Slideshow Logic [14]
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
-    /*Moves slides horizontally*/
     const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
     
     document.getElementById("nextBtn").addEventListener("click", () => {
@@ -134,44 +139,40 @@ if (categoryFromUrl) {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
-    /*Auto slides*/
     setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length; 
-    updateSlide(); 
+    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
+    updateSlide(); // Update the visual position of the track [4]
 }, 3000); 
 
+    // 3. Category Selection Logic [16, 21-24]
     const categories = document.querySelectorAll("#dropdown-menu li");
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
-/* Click category product shows*/
-categories.forEach(item => {
-    item.addEventListener("click", () => {
-        const selectedCat = item.getAttribute("data-cat");
 
-        slideshow.style.display = "none";
-        productsSection.style.display = "flex";
+    categories.forEach(item => {
+        item.addEventListener("click", () => {
+            const selectedCat = item.getAttribute("data-cat");
+            
+            // Swap Views (Requirements)
+            slideshow.style.display = "none";
+            productsSection.style.display = "flex";
+            dropdownMenu.classList.remove("active");
 
-        
-        document.querySelector(".color-sidebar").style.display = "block";
-
-        dropdownMenu.classList.remove("active");
-
-        updateColorSidebar(selectedCat);
-        renderProducts(selectedCat, "all");
-
-  
+            // Build Color Sidebar and Show Products
+            updateColorSidebar(selectedCat);
+            renderProducts(selectedCat, "all");
         });
     });
 });
-/*shows products*/
+
 function renderProducts(category, colorFilter) {
     const grid = document.getElementById("productsGrid");
     grid.innerHTML = "";
-/*display products that match*/
+
     const filtered = productsData.filter(p => 
         p.category === category && (colorFilter === "all" || p.color === colorFilter)
     );
-/*what each product card include*/
+
     filtered.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
@@ -183,29 +184,34 @@ function renderProducts(category, colorFilter) {
             <button class="buy-btn">Buy Now</button>
         `;
 
- /*Click product card size appear*/      
+        // Click Image -> Show Sizes [22]
+       
 card.querySelector("img").addEventListener("click", () => {
     const sizeBox = card.querySelector(".sizes");
 
+    // Check current display state and toggle it [2]
     if (sizeBox.style.display === "block") {
         sizeBox.style.display = "none";
     } else {
         sizeBox.style.display = "block";
         
+        // Only generate the sizes if the box is being shown [1]
         sizeBox.innerHTML = product.sizes
             .map(size => `<span class="size">${size}</span>`)
             .join("");
 
+        // Re-attach selection logic so users can pick a size [3]
         sizeBox.querySelectorAll(".size").forEach(s => {
             s.addEventListener("click", (e) => {
-                e.stopPropagation(); 
+                e.stopPropagation(); // Prevents the image click from triggering [2]
                 sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
                 s.classList.add("active");
             });
         });
     }
 });
-     
+
+        // Buy Now Button Alert
         card.querySelector(".buy-btn").addEventListener("click", () => {
             alert("added to cart");
         });
@@ -216,10 +222,11 @@ card.querySelector("img").addEventListener("click", () => {
 
 function updateColorSidebar(category) {
     const colorList = document.getElementById("colorList");
-    colorList.innerHTML = "<li>All</li>";
+    colorList.innerHTML = "<li>All</li>"; // Reset with 'All' option [23]
     
+    // Get unique colors for this category
     const categoryColors = [...new Set(productsData.filter(p => p.category === category).map(p => p.color))];
-    /* Each color is clickable*/
+    
     categoryColors.forEach(color => {
         const li = document.createElement("li");
         li.textContent = color.charAt(0).toUpperCase() + color.slice(1);
@@ -229,4 +236,3 @@ function updateColorSidebar(category) {
 
     colorList.firstChild.addEventListener("click", () => renderProducts(category, "all"));
 }
-
