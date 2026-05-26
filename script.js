@@ -1,5 +1,5 @@
 console.log("JS connected");
-// Product Database [19, 20]
+/
 const productsData = [
     { name: "Elegant Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels1.jpg", sizes: [38,39,40,41,42,43] },
     { name: "Jeweled Buckle Heels", category: "heels", color: "red", price: "P350", image: "image/heels/red/red-heels2.jpg", sizes: [38,39,40,41,42,43] },
@@ -100,33 +100,26 @@ const productsData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Dropdown Toggle [13]
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
     menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
     
-// 1. Get the category from the URL (e.g., ?category=heels)
 const urlParams = new URLSearchParams(window.location.search);
 const categoryFromUrl = urlParams.get('category');
 
-// 2. If a category was passed in the link, trigger the filter immediately
 if (categoryFromUrl) {
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
-    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
     if (slideshow && productsSection) {
         slideshow.style.display = "none";
         productsSection.style.display = "flex";
         document.querySelector(".color-sidebar").style.display = "block";
-        
-        // Use your existing functions to show the right shoes and colors
-        // Note: Make sure these function names match your current script.js
+    
         renderProducts(categoryFromUrl, "all");
         updateColorSidebar(categoryFromUrl); 
     }
 }
-    // 2. Slideshow Logic [14]
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
@@ -141,11 +134,10 @@ if (categoryFromUrl) {
         updateSlide();
     });
     setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
-    updateSlide(); // Update the visual position of the track [4]
+    currentIndex = (currentIndex + 1) % slides.length; 
+    updateSlide(); 
 }, 3000); 
 
-    // 3. Category Selection Logic [16, 21-24]
     const categories = document.querySelectorAll("#dropdown-menu li");
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
@@ -157,7 +149,7 @@ categories.forEach(item => {
         slideshow.style.display = "none";
         productsSection.style.display = "flex";
 
-        // ✅ ADD THIS LINE
+        
         document.querySelector(".color-sidebar").style.display = "block";
 
         dropdownMenu.classList.remove("active");
@@ -189,26 +181,22 @@ function renderProducts(category, colorFilter) {
             <button class="buy-btn">Buy Now</button>
         `;
 
-        // Click Image -> Show Sizes [22]
        
 card.querySelector("img").addEventListener("click", () => {
     const sizeBox = card.querySelector(".sizes");
 
-    // Check current display state and toggle it [2]
     if (sizeBox.style.display === "block") {
         sizeBox.style.display = "none";
     } else {
         sizeBox.style.display = "block";
         
-        // Only generate the sizes if the box is being shown [1]
         sizeBox.innerHTML = product.sizes
             .map(size => `<span class="size">${size}</span>`)
             .join("");
 
-        // Re-attach selection logic so users can pick a size [3]
         sizeBox.querySelectorAll(".size").forEach(s => {
             s.addEventListener("click", (e) => {
-                e.stopPropagation(); // Prevents the image click from triggering [2]
+                e.stopPropagation(); 
                 sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
                 s.classList.add("active");
             });
@@ -216,7 +204,6 @@ card.querySelector("img").addEventListener("click", () => {
     }
 });
 
-        // Buy Now Button Alert
         card.querySelector(".buy-btn").addEventListener("click", () => {
             alert("added to cart");
         });
@@ -227,9 +214,8 @@ card.querySelector("img").addEventListener("click", () => {
 
 function updateColorSidebar(category) {
     const colorList = document.getElementById("colorList");
-    colorList.innerHTML = "<li>All</li>"; // Reset with 'All' option [23]
+    colorList.innerHTML = "<li>All</li>";
     
-    // Get unique colors for this category
     const categoryColors = [...new Set(productsData.filter(p => p.category === category).map(p => p.color))];
     
     categoryColors.forEach(color => {
