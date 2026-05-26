@@ -345,6 +345,13 @@ nav a:hover {
 .dropdown-menu li { padding: 10px; cursor: pointer; transition: 0.3s; }
 .dropdown-menu li:hover { background-color: #d9a5a5; color: white; }
 
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
 /* Slideshow [9, 10] */
 .slideshow-container {
     position: relative;
