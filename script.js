@@ -123,6 +123,7 @@ if (categoryFromUrl) {
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
+    /*Moves slides horizontally*/
     const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
     
     document.getElementById("nextBtn").addEventListener("click", () => {
@@ -133,6 +134,7 @@ if (categoryFromUrl) {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSlide();
     });
+    /*Auto slides*/
     setInterval(() => {
     currentIndex = (currentIndex + 1) % slides.length; 
     updateSlide(); 
@@ -141,7 +143,7 @@ if (categoryFromUrl) {
     const categories = document.querySelectorAll("#dropdown-menu li");
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
-
+/* Click category product shows*/
 categories.forEach(item => {
     item.addEventListener("click", () => {
         const selectedCat = item.getAttribute("data-cat");
@@ -161,15 +163,15 @@ categories.forEach(item => {
         });
     });
 });
-
+/*shows products*/
 function renderProducts(category, colorFilter) {
     const grid = document.getElementById("productsGrid");
     grid.innerHTML = "";
-
+/*display products that match*/
     const filtered = productsData.filter(p => 
         p.category === category && (colorFilter === "all" || p.color === colorFilter)
     );
-
+/*what each product card include*/
     filtered.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
@@ -181,7 +183,7 @@ function renderProducts(category, colorFilter) {
             <button class="buy-btn">Buy Now</button>
         `;
 
-       
+ /*Click product card size appear*/      
 card.querySelector("img").addEventListener("click", () => {
     const sizeBox = card.querySelector(".sizes");
 
@@ -203,7 +205,7 @@ card.querySelector("img").addEventListener("click", () => {
         });
     }
 });
-
+     
         card.querySelector(".buy-btn").addEventListener("click", () => {
             alert("added to cart");
         });
@@ -217,7 +219,7 @@ function updateColorSidebar(category) {
     colorList.innerHTML = "<li>All</li>";
     
     const categoryColors = [...new Set(productsData.filter(p => p.category === category).map(p => p.color))];
-    
+    /* Each color is clickable*/
     categoryColors.forEach(color => {
         const li = document.createElement("li");
         li.textContent = color.charAt(0).toUpperCase() + color.slice(1);
