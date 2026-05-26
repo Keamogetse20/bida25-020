@@ -99,140 +99,194 @@ const productsData = [
     { name: "Chunky Sneakers", category: "sneakers", color: "white", price: "P600", image: "image/sneakers/white/white-sneakers7.jpg", sizes: [37,38,39,40,45] }    
 ];
 
+/* ================= MAIN ================= */
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Dropdown Toggle [13]
+
+    /* ---------- MENU (MOBILE DROPDOWN) ---------- */
     const menuToggle = document.getElementById("menu-toggle");
     const dropdownMenu = document.getElementById("dropdown-menu");
-    menuToggle.addEventListener("click", () => dropdownMenu.classList.toggle("active"));
-    
-// 1. Get the category from the URL (e.g., ?category=heels)
-const urlParams = new URLSearchParams(window.location.search);
-const categoryFromUrl = urlParams.get('category');
 
-// 2. If a category was passed in the link, trigger the filter immediately
-if (categoryFromUrl) {
+    if (menuToggle && dropdownMenu) {
+        menuToggle.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("active");
+        });
+    }
+
+
+    /* ---------- GET URL CATEGORY ---------- */
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromUrl = urlParams.get('category');
+
     const slideshow = document.getElementById("slideshowContainer");
     const productsSection = document.getElementById("productsSection");
 
-    // Hide slideshow and show product grid (matching your Ad.png to template 9 transition)
-    if (slideshow && productsSection) {
+    if (categoryFromUrl && slideshow && productsSection) {
         slideshow.style.display = "none";
         productsSection.style.display = "flex";
-        
-        // Use your existing functions to show the right shoes and colors
-        // Note: Make sure these function names match your current script.js
+
+        const sidebar = document.querySelector(".color-sidebar");
+        if (sidebar) sidebar.style.display = "block";
+
         renderProducts(categoryFromUrl, "all");
-        updateColorSidebar(categoryFromUrl); 
+        updateColorSidebar(categoryFromUrl);
     }
-}
-    // 2. Slideshow Logic [14]
+
+
+    /* ---------- SLIDESHOW ---------- */
     const track = document.getElementById("slide-track");
     const slides = document.querySelectorAll(".slide");
-    let currentIndex = 0;
-    const updateSlide = () => track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
-    document.getElementById("nextBtn").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlide();
-    });
-    document.getElementById("prevBtn").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlide();
-    });
-    setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the start after the last slide
-    updateSlide(); // Update the visual position of the track [4]
-}, 3000); 
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
 
-    // 3. Category Selection Logic [16, 21-24]
+    if (track && slides.length > 0) {
+
+        let currentIndex = 0;
+
+        const updateSlide = () => {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide();
+            });
+        }
+
+        /* AUTO SLIDE */
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+        }, 3000);
+    }
+
+
+    /* ---------- CATEGORY CLICK ---------- */
     const categories = document.querySelectorAll("#dropdown-menu li");
-    const slideshow = document.getElementById("slideshowContainer");
-    const productsSection = document.getElementById("productsSection");
 
     categories.forEach(item => {
         item.addEventListener("click", () => {
-            const selectedCat = item.getAttribute("data-cat");
-            
-            // Swap Views (Requirements)
-            slideshow.style.display = "none";
-            productsSection.style.display = "flex";
-            dropdownMenu.classList.remove("active");
 
-            // Build Color Sidebar and Show Products
+            const selectedCat = item.getAttribute("data-cat");
+
+            if (slideshow && productsSection) {
+                slideshow.style.display = "none";
+                productsSection.style.display = "flex";
+            }
+
+            const sidebar = document.querySelector(".color-sidebar");
+            if (sidebar) sidebar.style.display = "block";
+
+            if (dropdownMenu) dropdownMenu.classList.remove("active");
+
             updateColorSidebar(selectedCat);
             renderProducts(selectedCat, "all");
         });
     });
+
 });
 
+
+/* ================= RENDER PRODUCTS ================= */
 function renderProducts(category, colorFilter) {
+
     const grid = document.getElementById("productsGrid");
+    if (!grid) return;
+
     grid.innerHTML = "";
 
-    const filtered = productsData.filter(p => 
-        p.category === category && (colorFilter === "all" || p.color === colorFilter)
+    const filtered = productsData.filter(p =>
+        p.category === category &&
+        (colorFilter === "all" || p.color === colorFilter)
     );
 
     filtered.forEach(product => {
+
         const card = document.createElement("div");
         card.className = "product-card";
+
         card.innerHTML = `
             <h4>${product.name}</h4>
-            <img src="${product.image}" alt="${product.name}" width="150" height="150">
+            <img src="${product.image}" alt="${product.name}">
             <p>${product.price}</p>
-            <div class="sizes"></div>
+            <div class="sizes" style="display:none;"></div>
             <button class="buy-btn">Buy Now</button>
         `;
 
-        // Click Image -> Show Sizes [22]
-       
-card.querySelector("img").addEventListener("click", () => {
-    const sizeBox = card.querySelector(".sizes");
+        /* SHOW SIZES */
+        const img = card.querySelector("img");
+        const sizeBox = card.querySelector(".sizes");
 
-    // Check current display state and toggle it [2]
-    if (sizeBox.style.display === "block") {
-        sizeBox.style.display = "none";
-    } else {
-        sizeBox.style.display = "block";
-        
-        // Only generate the sizes if the box is being shown [1]
-        sizeBox.innerHTML = product.sizes
-            .map(size => `<span class="size">${size}</span>`)
-            .join("");
+        img.addEventListener("click", () => {
 
-        // Re-attach selection logic so users can pick a size [3]
-        sizeBox.querySelectorAll(".size").forEach(s => {
-            s.addEventListener("click", (e) => {
-                e.stopPropagation(); // Prevents the image click from triggering [2]
-                sizeBox.querySelectorAll(".size").forEach(el => el.classList.remove("active"));
-                s.classList.add("active");
-            });
+            if (sizeBox.style.display === "block") {
+                sizeBox.style.display = "none";
+            } else {
+                sizeBox.style.display = "block";
+
+                sizeBox.innerHTML = product.sizes
+                    .map(size => `<span class="size">${size}</span>`)
+                    .join("");
+
+                sizeBox.querySelectorAll(".size").forEach(s => {
+                    s.addEventListener("click", (e) => {
+                        e.stopPropagation();
+
+                        sizeBox.querySelectorAll(".size")
+                            .forEach(el => el.classList.remove("active"));
+
+                        s.classList.add("active");
+                    });
+                });
+            }
+
         });
-    }
-});
 
-        // Buy Now Button Alert
+        /* BUY BUTTON */
         card.querySelector(".buy-btn").addEventListener("click", () => {
-            alert("added to cart");
+            alert("Added to cart");
         });
 
         grid.appendChild(card);
     });
 }
 
+
+/* ================= COLOR SIDEBAR ================= */
 function updateColorSidebar(category) {
+
     const colorList = document.getElementById("colorList");
-    colorList.innerHTML = "<li>All</li>"; // Reset with 'All' option [23]
-    
-    // Get unique colors for this category
-    const categoryColors = [...new Set(productsData.filter(p => p.category === category).map(p => p.color))];
-    
-    categoryColors.forEach(color => {
+    if (!colorList) return;
+
+    colorList.innerHTML = "<li>All</li>";
+
+    const colors = [...new Set(
+        productsData
+            .filter(p => p.category === category)
+            .map(p => p.color)
+    )];
+
+    colors.forEach(color => {
         const li = document.createElement("li");
         li.textContent = color.charAt(0).toUpperCase() + color.slice(1);
-        li.addEventListener("click", () => renderProducts(category, color));
+
+        li.addEventListener("click", () => {
+            renderProducts(category, color);
+        });
+
         colorList.appendChild(li);
     });
 
-    colorList.firstChild.addEventListener("click", () => renderProducts(category, "all"));
+    /* ALL BUTTON */
+    colorList.firstChild.addEventListener("click", () => {
+        renderProducts(category, "all");
+    });
 }
+
